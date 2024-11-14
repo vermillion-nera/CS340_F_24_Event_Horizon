@@ -1,0 +1,4 @@
+Filter by an age group, find average GPA by study hour count
+Amount of students with a 4.0 GPA
+Average study hours among students below a 1.0 GPA
+Categorize by GPA (0-0.99, 1-2.99, 2-3.99, 3-4.00), average all data regarding these

@@ -46,7 +46,7 @@ Unless otherwise required, use the following guidelines
 '''
 
 #%% MODULE BEGINS
-module_name = parent_class_2
+module_name = "class_2"
 
 '''
 Version: .01

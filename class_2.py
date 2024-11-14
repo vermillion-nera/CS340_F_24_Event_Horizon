@@ -122,7 +122,7 @@ class child(parent):
         test = True
     #end
 
-    def inputPickle(csv):
+    def inputPickle(pickle):
         print("child2")
     #end
 #end

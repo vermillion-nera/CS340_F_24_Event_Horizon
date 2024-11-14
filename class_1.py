@@ -46,7 +46,7 @@ Unless otherwise required, use the following guidelines
 '''
 
 #%% MODULE BEGINS
-module_name = child_class_1
+module_name = parent_class_1
 
 '''
 Version: .01
@@ -107,8 +107,25 @@ import seaborn as sns
 
 
 #Class definitions Start Here
+class parent:
+    def __init__():
+        test = True
+    #end
+    
+    def doSomething():
+        print("parent1")
+    #end
+#end
 
-
+class child(parent):
+    def __init__():
+        test = True
+    #end
+    
+    def inputCSV(csv):
+        print("child1")
+    #end
+#end
 
 #Function definitions Start Here
 def main():

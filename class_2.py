@@ -107,7 +107,25 @@ import seaborn as sns
 
 
 #Class definitions Start Here
+class parent:
+    def __init__():
+        test = True
+    #end
 
+    def doSomething():
+        print("parent2")
+    #end
+#end
+
+class child(parent):
+    def __init__():
+        test = True
+    #end
+
+    def inputPickle(csv):
+        print("child2")
+    #end
+#end
 
 
 #Function definitions Start Here

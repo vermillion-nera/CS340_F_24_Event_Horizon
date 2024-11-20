@@ -32,6 +32,8 @@ if __name__ == "__main__":
 #other imports
 from   copy       import deepcopy as dpcpy
 import config
+import numpy  as np
+import pandas as pd
 '''
 from   matplotlib import pyplot as plt
 import mne

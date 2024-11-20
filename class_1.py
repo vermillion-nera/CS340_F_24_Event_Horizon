@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
-
+import config
 '''
 from   matplotlib import pyplot as plt
 import mne

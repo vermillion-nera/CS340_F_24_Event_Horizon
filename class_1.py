@@ -58,7 +58,7 @@ import seaborn as sns
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Global declarations Start Here
-
+print(config.df)
 
 
 #Class definitions Start Here

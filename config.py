@@ -47,10 +47,11 @@ import seaborn as sns
 
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# df = pd.read_csv("Student_performance_data _.csv") # This is part of child class 1
+df = pd.read_csv("Student_performance_data _.csv") # This is part of child class 1, it should not really be here
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

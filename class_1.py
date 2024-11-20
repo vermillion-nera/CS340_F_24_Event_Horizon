@@ -74,7 +74,7 @@ class parent: # TODO: Rename this to be more logical
 #end
 
 class child(parent): # TODO: rename this to be more logical
-    df = pd.read_csv("Student_performance_data _.csv") # Reads the data into a dataframe
+    df = pd.read_csv("Student_performance_data.csv") # Reads the data into a dataframe
 
  
     def __init__():

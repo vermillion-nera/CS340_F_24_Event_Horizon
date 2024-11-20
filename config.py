@@ -51,7 +51,7 @@ TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-df = pd.read_csv("Student_performance_data _.csv") # This is part of child class 1, it should not really be here
+df = pd.read_csv("Student_performance_data.csv") # This is part of child class 1, it should not really be here
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

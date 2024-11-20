@@ -34,6 +34,7 @@ from   copy       import deepcopy as dpcpy
 import config
 import numpy  as np
 import pandas as pd
+import logging
 '''
 from   matplotlib import pyplot as plt
 import mne
@@ -41,6 +42,7 @@ import numpy  as np
 import os
 import pandas as pd
 import seaborn as sns
+import logging
 '''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -58,12 +60,11 @@ import seaborn as sns
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Global declarations Start Here
+print(config.df)
 
 
 #Class definitions Start Here
-class parent: # TODO: Rename this to be more logical
-    # TODO: Import configuration constants as a dict
-
+class parent:
     def __init__():
         test = True
     #end
@@ -73,9 +74,7 @@ class parent: # TODO: Rename this to be more logical
     #end
 #end
 
-class child(parent): # TODO: rename this to be more logical
-    df = pd.read_csv("Student_performance_data.csv") # Reads the data into a dataframe
-
+class child(parent):
  
     def __init__():
         test = True
@@ -97,7 +96,7 @@ def main():
 
 #%% MAIN CODE                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Main code start here
-print(config.df) # Testing
+
 
 
 #%% SELF-RUN                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

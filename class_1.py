@@ -31,7 +31,9 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
-
+import config
+import numpy  as np
+import pandas as pd
 '''
 from   matplotlib import pyplot as plt
 import mne
@@ -58,9 +60,10 @@ import seaborn as sns
 #Global declarations Start Here
 
 
-
 #Class definitions Start Here
-class parent:
+class parent: # TODO: Rename this to be more logical
+    # TODO: Import configuration constants as a dict
+
     def __init__():
         test = True
     #end
@@ -70,13 +73,20 @@ class parent:
     #end
 #end
 
-class child(parent):
+class child(parent): # TODO: rename this to be more logical
+    df = pd.read_csv("Student_performance_data _.csv") # Reads the data into a dataframe
+
+ 
     def __init__():
         test = True
     #end
-    
+
     def inputCSV(csv):
         print("child1")
+        
+        
+        
+    
     #end
 #end
 
@@ -87,7 +97,7 @@ def main():
 
 #%% MAIN CODE                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Main code start here
-
+print(config.df) # Testing
 
 
 #%% SELF-RUN                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,3 +108,4 @@ if __name__ == "__main__":
     
     #TEST Code
     main()
+   

@@ -1,0 +1,34 @@
+import pandas as pd
+import csv
+
+genderTuple = ('Male', 'Female')
+ethnicityTuple = ('Caucasian', 'African American', 'Asian', 'Other')
+parentalEducationTuple = ('None', 'High School', 'Some College', 'Bachelor\'s', 'Higher')
+parentalSupportTuple = ('None', 'Low', 'Moderate', 'High', 'Very High')
+gradeClassTuple = ('F', 'D', 'C', 'B', 'A')
+booleanTuple = (False, True)
+
+rawData = pd.read_csv('csv_sterilizer\\Student_performance_data_RAW.csv')
+rawDataList = rawData.values.tolist()
+
+file_path = f'csv_sterilizer/Student_performance_data.csv'
+
+with open(file_path, "w", newline='') as cleanCSV:
+    writer = csv.writer(cleanCSV)
+    writer.writerow(rawData.columns) # Add the column headers to the new file 
+    # StudentID, Age, Gender, Ethnicity, ParentalEducation, StudyTimeWeekly, Absences, Tutoring, ParentalSupport, Extracurricular, Sports, Music, Volunteering, GPA, GradeClass
+    for studentData in rawDataList:
+            indices = [int(x) for x in studentData]
+
+            studentData[2] = genderTuple[indices[2]] # Gender 
+            studentData[3] = ethnicityTuple[indices[3]] # Ethnicity
+            studentData[4] = parentalEducationTuple[indices[4]] # Parental Education
+            studentData[7] = booleanTuple[indices[7]] # Tutoring
+            studentData[8] = parentalSupportTuple[indices[8]] # Parental Support
+            studentData[9] = booleanTuple[indices[9]] # Extracurricular
+            studentData[10] = booleanTuple[indices[10]] # Sport
+            studentData[11] = booleanTuple[indices[11]] # Music
+            studentData[12] = booleanTuple[indices[12]] # Volunteering
+
+            writer.writerow(studentData)
+    #

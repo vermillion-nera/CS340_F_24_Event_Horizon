@@ -58,11 +58,12 @@ import seaborn as sns
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Global declarations Start Here
-print(config.df)
 
 
 #Class definitions Start Here
-class parent:
+class parent: # TODO: Rename this to be more logical
+    # TODO: Import configuration constants as a dict
+
     def __init__():
         test = True
     #end
@@ -72,7 +73,9 @@ class parent:
     #end
 #end
 
-class child(parent):
+class child(parent): # TODO: rename this to be more logical
+    df = pd.read_csv("Student_performance_data _.csv") # Reads the data into a dataframe
+
     def __init__():
         test = True
     #end
@@ -89,7 +92,7 @@ def main():
 
 #%% MAIN CODE                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Main code start here
-
+print(config.df) # Testing
 
 
 #%% SELF-RUN                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

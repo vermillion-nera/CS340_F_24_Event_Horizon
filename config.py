@@ -1,5 +1,5 @@
 #%% MODULE BEGINS
-module_name = '<***>'
+module_name = 'config'
 
 '''
 Version: <***>
@@ -31,6 +31,9 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
+import numpy as np
+import pandas as pd
+import os
 
 '''
 from   matplotlib import pyplot as plt
@@ -44,10 +47,11 @@ import seaborn as sns
 
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+df = pd.read_csv("Student_performance_data _.csv") # This is part of child class 1, it should not really be here
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

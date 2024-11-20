@@ -1,5 +1,5 @@
 #%% MODULE BEGINS
-module_name = '<***>'
+module_name = 'main'
 
 '''
 Version: <***>

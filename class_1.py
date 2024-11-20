@@ -76,12 +76,17 @@ class parent: # TODO: Rename this to be more logical
 class child(parent): # TODO: rename this to be more logical
     df = pd.read_csv("Student_performance_data _.csv") # Reads the data into a dataframe
 
+ 
     def __init__():
         test = True
     #end
-    
+
     def inputCSV(csv):
         print("child1")
+        
+        
+        
+    
     #end
 #end
 
@@ -103,3 +108,4 @@ if __name__ == "__main__":
     
     #TEST Code
     main()
+   

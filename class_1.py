@@ -60,32 +60,43 @@ logger = logging.getLogger(__name__)
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #Global declarations Start Here
-print(config.df)
+
 
 
 #Class definitions Start Here
-class parent:
-    def __init__():
-        test = True
+class parentCSV:
+    def __init__(self):
+        print("Parent 1 initialized.")
     #end
-    
-    def doSomething():
+
+    def doSomething(self):
         print("parent1")
     #end
 #end
 
-class child(parent):
+class childCSV(parentCSV):
+    filepathtest = ""
  
-    def __init__():
-        test = True
+    def __init__(self, csv):
+        self.filepath = csv
+        self.df = pd.read_csv(csv)
+        print("Child 1 initialized.")
     #end
 
-    def inputCSV(csv):
-        print("child1")
-        
-        
-        
-    
+    def csvToDataFrame(self, filepath):
+        self.df = pd.read_csv(filepath)
+    #end
+
+    def generateDataFrame(self):
+        self.df = pd.read_csv(self.filepath)
+    #end
+
+    def setFilepath(self, filepath):
+        self.filepath = filepath
+    #end
+
+    def printDataFrame(self):
+        print(self.df)
     #end
 #end
 

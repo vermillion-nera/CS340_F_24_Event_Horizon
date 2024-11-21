@@ -53,7 +53,6 @@ TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-df = pd.read_csv("Student_performance_data_.csv") # This is part of child class 1, it should not really be here
 logging.basicConfig(          #sets up root logger
     filename = "log_1.log",
     encoding = "utf-8",
@@ -74,7 +73,15 @@ logging.basicConfig(          #sets up root logger
 
 
 #Class definitions Start Here
+class userInput:
+    def __init__(self):
+        print("User Input initialized.")
+    #end
 
+    def askForInput(self, message="Give input"):
+        return input(message+":\t")
+    #end
+#end
 
 
 #Function definitions Start Here

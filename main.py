@@ -195,6 +195,7 @@ def enactCommand(command):
 def main():
     command = "initial"
     while (command != "exit" and command != "e"):
+        print()
         command = input.askForInput()
         enactCommand(command)
     #end

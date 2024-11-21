@@ -82,8 +82,8 @@ class parentCSV:
         return self.df
     #end
 
-    def printColumns(self, colNames): # Inputs an array
-        print(self.df[colNames])
+    def printColumns(self, colNames): # Inputs a string (i.e. "Age GPA")
+        print(self.df[colNames.split(" ")])
     #end
 
     def printRows(self, rowIndices): # Inputs a string (i.e. "4:9")
@@ -121,8 +121,8 @@ class parentCSV:
         print(self.shaped.query(myQuery))
     #end
 
-    def filterColumns(self, colNames): # Inputs an array
-        self.shaped = self.shaped[colNames]
+    def filterColumns(self, colNames): # Inputs a string (i.e. "Age GPA")
+        self.shaped = self.shaped[colNames.split(" ")]
     #end
 
     def filterRows(self, rowIndices): # Inputs a string (i.e. "4:9")

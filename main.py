@@ -124,8 +124,7 @@ def enactCommand(command):
     elif (command == "filter columns" or command == "filter column"):
         if (handlingCSV):
             answer = input.askForInput("Columns to filter")
-            filter = answer.split(" ")
-            classCSV.filterColumns(filter)
+            classCSV.filterColumns(answer)
             print("Filtered by '"+answer+"' columns.")
         else:
             print("Unimplemented.")

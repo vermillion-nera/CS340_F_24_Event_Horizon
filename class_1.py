@@ -71,7 +71,7 @@ class parentCSV:
     #end
 
     def requestColumn(self, colName):
-        print(self.df[colName])
+        print(self.df[[colName]])
     #end
 
     def printDataFrame(self):

@@ -1,0 +1,78 @@
+User Input initialized.
+CSV parent initialized.
+CSV child initialized.
+Pickle child initialized.
+"main" module begins.
+Give input:     print columns
+Columns to print:       Age Gender Music GPA 
+       Age  Gender  Music       GPA
+0     17.0  Female   True  2.929196
+1     18.0    Male  False  3.042915
+2     15.0    Male  False  0.112602
+3     17.0  Female  False  2.054218
+4     17.0  Female  False  1.288061
+...    ...     ...    ...       ...
+2387  18.0  Female  False  3.455509
+2388  17.0    Male  False  3.279150
+2389  16.0  Female  False  1.142333
+2390  16.0  Female   True  1.803297
+2391  16.0  Female  False  2.140014
+
+[2392 rows x 4 columns]
+Give input:     print
+      StudentID   Age  Gender         Ethnicity ParentalEducation  ...  Sports  Music  Volunteering       GPA  GradeClass
+0        1001.0  17.0  Female         Caucasian      Some College  ...   False   True         False  2.929196         2.0
+1        1002.0  18.0    Male         Caucasian       High School  ...   False  False         False  3.042915         1.0
+2        1003.0  15.0    Male             Asian        Bachelor's  ...   False  False         False  0.112602         4.0
+3        1004.0  17.0  Female         Caucasian        Bachelor's  ...   False  False         False  2.054218         3.0
+4        1005.0  17.0  Female         Caucasian      Some College  ...   False  False         False  1.288061         4.0
+...         ...   ...     ...               ...               ...  ...     ...    ...           ...       ...         ...
+2387     3388.0  18.0  Female         Caucasian        Bachelor's  ...   False  False         False  3.455509         0.0
+2388     3389.0  17.0    Male         Caucasian       High School  ...    True  False         False  3.279150         4.0
+2389     3390.0  16.0  Female         Caucasian      Some College  ...   False  False          True  1.142333         2.0
+2390     3391.0  16.0  Female  African American               NaN  ...    True   True         False  1.803297         1.0
+2391     3392.0  16.0  Female         Caucasian      Some College  ...   False  False          True  2.140014         1.0
+
+[2392 rows x 15 columns]
+Give input:     filter columns
+Columns to filter:      Age GPA Gender
+Filtered by 'Age GPA Gender' columns.
+Give input:     print
+       Age       GPA  Gender
+0     17.0  2.929196  Female
+1     18.0  3.042915    Male
+2     15.0  0.112602    Male
+3     17.0  2.054218  Female
+4     17.0  1.288061  Female
+...    ...       ...     ...
+2387  18.0  3.455509  Female
+2388  17.0  3.279150    Male
+2389  16.0  1.142333  Female
+2390  16.0  1.803297  Female
+2391  16.0  2.140014  Female
+
+[2392 rows x 3 columns]
+Give input:     filter query
+Query:  Age == 18 & Gender == 'Male'
+Filtered by 'Age == 18 & Gender == 'Male''.
+Give input:     print
+       Age       GPA Gender
+1     18.0  3.042915   Male
+5     18.0  3.084184   Male
+16    18.0  2.232175   Male
+18    18.0  0.469553   Male
+28    18.0  2.854804   Male
+...    ...       ...    ...
+2360  18.0  1.347633   Male
+2372  18.0  1.849104   Male
+2373  18.0  0.825020   Male
+2375  18.0  1.164539   Male
+2377  18.0  2.652355   Male
+
+[277 rows x 3 columns]
+Give input:     filter query
+Query:  GPA >= 3.75
+Filtered by 'GPA >= 3.75'.
+Give input:     print
+      Age       GPA Gender
+919  18.0  3.869587   Male

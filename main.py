@@ -57,11 +57,11 @@ import logging
 
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-csv_path = "CSV_sterilizer/Student_performance_data.csv"
-dataframe = pd.read_csv(csv_path)
+
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+csv_path = "CSV_sterilizer/Student_performance_data.csv"
+dataframe = pd.read_csv(csv_path)
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 input = config.userInput()

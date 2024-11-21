@@ -53,8 +53,16 @@ TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-df = pd.read_csv("Student_performance_data _.csv") # This is part of child class 1, it should not really be here
+df = pd.read_csv("Student_performance_data_.csv") # This is part of child class 1, it should not really be here
+logging.basicConfig(          #sets up root logger
+    filename = "log_1.log",
+    encoding = "utf-8",
+    filemode = "a",
+    format = "{asctime} - {levelname} - {message}",
+    style = "{",
+    datefmt = "%Y-%m-%d %H:%M",
 
+)
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

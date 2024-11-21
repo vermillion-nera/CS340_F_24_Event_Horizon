@@ -56,6 +56,7 @@ import sys
 logger = logging.getLogger(__name__)
 
 
+
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -173,4 +174,4 @@ if __name__ == "__main__":
     #TEST Code
     main()
     
-   
+    logging.warning("hello")

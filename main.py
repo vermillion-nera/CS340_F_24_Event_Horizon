@@ -68,7 +68,7 @@ input = config.userInput()
 parentCSV = class_1.parentCSV(dataframe)
 classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 classPickle = class_2.child()
-commandList = (
+commandList = ( # TODO: Put this into a dictionary
     "help",
     "print",
     "print unshaped",
@@ -98,7 +98,7 @@ handlingCSV = True
 
 
 #Function definitions Start Here
-def enactCommand(command):
+def enactCommand(command): # TODO: Implement try catch statement, and if it catches an error, log it and continue on (not enacting a command shouldn't break ).
     global handlingCSV
     global commandList
     # TODO: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
@@ -155,6 +155,7 @@ def enactCommand(command):
         else:
             print("Unimplemented.")
         #end
+        # TODO: Allow for exporting the filtered table into a CSV/TXT file
     elif (command == "datatype" or command == "data type" or command == "type"):
         if (handlingCSV):   print("Handling CSV's.")
         else:               print("Handling Pickles.")

@@ -174,13 +174,13 @@ def enactCommand(command):
         column_name = input.askForInput("Enter column name for histogram/bar chart: ")  
         parentCSV.plotAllColumnsHist(column_name, save=True) 
     elif (command == "studyTime vs parentalSupport"):
-     classCSV.Violin_StudyTimeWeekly_by_ParentalSupport()
+     classCSV.Violin_StudyTimeWeekly_vs_ParentalSupport()
     elif (command == "GPA vs Gender"):
         classCSV.Violin_GPA_vs_Gender()
     elif (command == "Absences vs GradeClass"):
         classCSV.Box_Absences_vs_GradeClass()
     elif (command == "GPA vs ParentalEducation"):
-         classCSV.Box_GPA_by_ParentalEducation()
+         classCSV.Box_GPA_vs_ParentalEducation()
     elif (command == "StudyTimeWeekly vs GPA"):
         classCSV.scatter_StudyTimeWeekly_vs_GPA()
     elif (command == "Age vs Absences"):

@@ -80,7 +80,7 @@ def enactCommand(command):
     if (command == "print"):
         if (handlingCSV):   classCSV.printDataFrame()
         else:               classPickle.printPickle()
-    elif (command == "print columns"):
+    elif (command == "print columns" or command == "print column"):
         if (handlingCSV):   print(classCSV.requestColumn(input.askForInput("Column to print")))
         else:               print("Unimplemented.")
     elif (command == "datatype" or command == "data type"):

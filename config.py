@@ -35,6 +35,7 @@ import numpy as np
 import pandas as pd
 import os
 import logging
+import sys
 
 '''
 from   matplotlib import pyplot as plt
@@ -44,6 +45,7 @@ import os
 import pandas as pd
 import seaborn as sns
 import logging
+import sys
 '''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -60,8 +62,10 @@ logging.basicConfig(          #sets up root logger
     format = "{asctime} - {levelname} - {message}",
     style = "{",
     datefmt = "%Y-%m-%d %H:%M",
+    
 
 )
+
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,4 +106,4 @@ if __name__ == "__main__":
     
     #TEST Code
     main()
-    
+   

@@ -2,16 +2,20 @@
 module_name = "class_1"
 
 '''
-Version: .01
+Version: 1.0
 
 Description:
-    <***>
+    Holds two classes designed for handling Pandas
+    DataFrames, and converting CSV's to DataFrames.
 
 Authors:
-    <***>
+    Christian Bankovic
+    Wren Caillouet
+    Maxwell Benson
+    Brian Britton
 
-Date Created     :  <***>
-Date Last Updated:  <***>
+Date Created     :  11/20/2024
+Date Last Updated:  11/20/2024
 
 Doc:
     <***>
@@ -74,12 +78,47 @@ class parentCSV:
         print("CSV parent initialized.")
     #end
 
+    def getDataFrame(self):
+        return self.df
+    #end
+
     def printColumns(self, colNames): # Inputs an array
         print(self.df[colNames])
     #end
 
-    def printRows(self, rowIndices): # Inputs an array
-        print(self.df.iloc[rowIndices])
+    def printRows(self, rowIndices): # Inputs a string (i.e. "4:9")
+        mask = 0 < self.shaped.index
+        num1 = num2 = ""
+        isOperator = False
+        for char in rowIndices:
+            if (char == " "): break
+            elif (char.isnumeric()): 
+                if (not isOperator): num1 += char
+                else: num2 += char
+            elif (char == ":"):
+                isOperator = True
+            #end
+        #end
+        if (num1 != ""): num1 = int(num1)
+        if (num2 != ""): num2 = int(num2)
+        if (isOperator):
+            if (num1 != "" and num2 == ""): # "4:"
+                mask = num1 <= self.shaped.index
+            elif (num1 == "" and num2 != ""): # ":6"
+                mask = self.shaped.index < num2
+            elif (num1 != "" and num2 != ""): # "4:6"
+                mask = ((num1 <= self.shaped.index) & (self.shaped.index < num2))
+            else: # ":"
+                mask = 0 < self.shaped.index
+            #end
+            print(self.shaped[mask])
+        else:
+            print(self.shaped.iloc[[num1]])
+        #end
+    #end
+
+    def printQuery(self, myQuery): # Inputs a query. Not for the faint of heart.
+        print(self.shaped.query(myQuery))
     #end
 
     def filterColumns(self, colNames): # Inputs an array

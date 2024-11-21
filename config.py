@@ -2,16 +2,21 @@
 module_name = 'config'
 
 '''
-Version: <***>
+Version: 0.1
 
 Description:
-    <***>
+    WIP class designed to hold functions used
+    across several modules, the most notable
+    being the logger and the user input.
 
 Authors:
-    <***>
+    Christian Bankovic
+    Wren Caillouet
+    Maxwell Benson
+    Brian Britton
 
-Date Created     :  <***>
-Date Last Updated:  <***>
+Date Created     :  11/20/2024
+Date Last Updated:  11/20/2024
 
 Doc:
     <***>

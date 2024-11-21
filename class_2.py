@@ -2,16 +2,19 @@
 module_name = "class_2"
 
 '''
-Version: .01
+Version: 0.1
 
 Description:
-    <***>
+    WIP class meant to handle Pickle files.
 
 Authors:
-    <***>
+    Christian Bankovic
+    Wren Caillouet
+    Maxwell Benson
+    Brian Britton
 
-Date Created     :  <***>
-Date Last Updated:  <***>
+Date Created     :  11/20/2024
+Date Last Updated:  11/20/2024
 
 Doc:
     <***>

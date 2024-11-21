@@ -2,16 +2,22 @@
 module_name = 'main'
 
 '''
-Version: <***>
+Version: 1.0
 
 Description:
-    <***>
+    Imports the classes from class_1, class_2, and
+    config. Also runs the entire program, asking
+    the user for commands and enacting them until
+    the user types 'exit'.
 
 Authors:
-    <***>
+    Christian Bankovic
+    Wren Caillouet
+    Maxwell Benson
+    Brian Britton
 
-Date Created     :  <***>
-Date Last Updated:  <***>
+Date Created     :  11/20/2024
+Date Last Updated:  11/20/2024
 
 Doc:
     <***>
@@ -36,7 +42,7 @@ import class_1
 import class_2
 import os
 import logging
-import sys
+
 '''
 from   matplotlib import pyplot as plt
 import mne
@@ -55,9 +61,6 @@ import logging
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
-
-
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 input = config.userInput()
 classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
@@ -68,8 +71,10 @@ commandList = (
     "print unshaped",
     "print columns",
     "print rows",
+    "print query",
     "filter columns",
     "filter rows",
+    "filter query",
     "filter reset",
     "datatype",
     "switch",
@@ -108,11 +113,14 @@ def enactCommand(command):
         if (handlingCSV):   classCSV.printDataFrameOriginal()
         else:               classPickle.printPickle()
     elif (command == "print columns" or command == "print column"):
-        if (handlingCSV): classCSV.printColumns(input.askForInput("Columns to print"))
-        else: print("Unimplemented.")
+        if (handlingCSV):   classCSV.printColumns(input.askForInput("Columns to print"))
+        else:               print("Unimplemented.")
     elif (command == "print rows" or command == "print row"):
-        if (handlingCSV): classCSV.printRows(input.askForInput("Rows to print"))
-        else: print("Unimplemented.")
+        if (handlingCSV):   classCSV.printRows(input.askForInput("Rows to print"))
+        else:               print("Unimplemented.")
+    elif (command == "print query"):
+        if (handlingCSV):   classCSV.printQuery(input.askForInput("Query"))
+        else:               print("Unimplemented.")
     elif (command == "filter columns" or command == "filter column"):
         if (handlingCSV):
             answer = input.askForInput("Columns to filter")
@@ -130,18 +138,18 @@ def enactCommand(command):
         else:
             print("Unimplemented.")
         #end
-    elif (command == "filter reset"):
-        if (handlingCSV):
-            classCSV.resetShape()
-            print("Dataframe filter reset.")
-        else:
-            print("Unimplemented.")
-        #end
-    elif (command == "query"):
+    elif (command == "filter query"):
         if (handlingCSV):
             answer = input.askForInput("Query")
             classCSV.filterQuery(answer)
             print("Filtered by '"+answer+"'.")
+        else:
+            print("Unimplemented.")
+        #end
+    elif (command == "filter reset"):
+        if (handlingCSV):
+            classCSV.resetShape()
+            print("Dataframe filter reset.")
         else:
             print("Unimplemented.")
         #end
@@ -172,7 +180,6 @@ def main():
         command = input.askForInput()
         enactCommand(command)
     #end
-    
     pass
 #
 

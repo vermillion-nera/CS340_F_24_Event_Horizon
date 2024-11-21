@@ -65,20 +65,22 @@ import logging
 class parent:
     def __init__(self):
         test = True
+        print("Pickle parent initialized.")
     #end
 
-    def doSomething(self):
-        print("parent2")
+    def printPickle(self):
+        print("printingPickle")
     #end
 #end
 
 class child(parent):
     def __init__(self):
         test = True
+        print("Pickle child initialized.")
     #end
 
     def inputPickle(self, pickle):
-        print("child2")
+        print("this is supposed to input a pickle")
     #end
 #end
 

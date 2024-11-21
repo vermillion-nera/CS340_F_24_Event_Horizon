@@ -65,38 +65,38 @@ logger = logging.getLogger(__name__)
 
 #Class definitions Start Here
 class parentCSV:
-    def __init__(self):
-        print("Parent 1 initialized.")
+    def __init__(self, dataframe):
+        self.df = dataframe
+        print("CSV parent initialized.")
     #end
 
-    def doSomething(self):
-        print("parent1")
+    def requestColumn(self, colName):
+        print(self.df[colName])
+    #end
+
+    def printDataFrame(self):
+        print(self.df)
     #end
 #end
 
 class childCSV(parentCSV):
-    filepathtest = ""
- 
     def __init__(self, csv):
         self.filepath = csv
-        self.df = pd.read_csv(csv)
-        print("Child 1 initialized.")
-    #end
-
-    def csvToDataFrame(self, filepath):
-        self.df = pd.read_csv(filepath)
-    #end
-
-    def generateDataFrame(self):
-        self.df = pd.read_csv(self.filepath)
+        super().__init__(pd.read_csv(csv))
+        print("CSV child initialized.")
     #end
 
     def setFilepath(self, filepath):
         self.filepath = filepath
     #end
 
-    def printDataFrame(self):
-        print(self.df)
+    def csvToDataFrame(self, filepath):
+        self.filepath = filepath
+        self.df = pd.read_csv(filepath)
+    #end
+
+    def generateDataFrame(self):
+        self.df = pd.read_csv(self.filepath)
     #end
 #end
 

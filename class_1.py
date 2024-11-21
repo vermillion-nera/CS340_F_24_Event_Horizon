@@ -51,7 +51,7 @@ import logging
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+logger = logging.getLogger(__name__)
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,4 +118,5 @@ if __name__ == "__main__":
     
     #TEST Code
     main()
+    logger.warning("Something went wrong in module2")
    

@@ -69,14 +69,66 @@ logger = logging.getLogger(__name__)
 class parentCSV:
     def __init__(self, dataframe):
         self.df = dataframe
+        self.shaped = dataframe
         print("CSV parent initialized.")
     #end
 
-    def requestColumn(self, colName):
-        print(self.df[[colName]])
+    def printColumns(self, colNames): # Inputs an array
+        print(self.df[colNames])
+    #end
+
+    def printRows(self, rowIndices): # Inputs an array
+        print(self.df.iloc[rowIndices])
+    #end
+
+    def filterColumns(self, colNames): # Inputs an array
+        self.shaped = self.shaped[colNames]
+    #end
+
+    def filterRows(self, rowIndices): # Inputs a string (i.e. "4:9")
+        mask = 0 < self.shaped.index
+        num1 = num2 = ""
+        isOperator = False
+        for char in rowIndices:
+            if (char == " "): break
+            elif (char.isnumeric()): 
+                if (not isOperator): num1 += char
+                else: num2 += char
+            elif (char == ":"):
+                isOperator = True
+            #end
+        #end
+        if (num1 != ""): num1 = int(num1)
+        if (num2 != ""): num2 = int(num2)
+        if (isOperator):
+            if (num1 != "" and num2 == ""): # "4:"
+                mask = num1 <= self.shaped.index
+            elif (num1 == "" and num2 != ""): # ":6"
+                mask = self.shaped.index < num2
+            elif (num1 != "" and num2 != ""): # "4:6"
+                mask = ((num1 <= self.shaped.index) & (self.shaped.index < num2))
+            else: # ":"
+                mask = 0 < self.shaped.index
+            #end
+            self.shaped = self.shaped[mask]
+        else:
+            self.shaped = self.shaped.iloc[[num1]]
+        #end
+    #end
+
+    def filterQuery(self, myQuery): # Inputs a query. Not for the faint of heart.
+        self.shaped = self.shaped.query(myQuery)
+    #end
+
+    def resetShape(self):
+        self.shaped = self.df
     #end
 
     def printDataFrame(self):
+        print(self.shaped)
+    #end
+
+    def printDataFrameOriginal(self):
         print(self.df)
     #end
 #end

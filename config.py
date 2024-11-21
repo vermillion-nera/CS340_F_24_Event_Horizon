@@ -53,7 +53,7 @@ TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-df = pd.read_csv("Student_performance_data _.csv") # This is part of child class 1, it should not really be here
+# df = pd.read_csv("Student_performance_data _.csv") # This is part of child class 1, it should not really be here
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +66,15 @@ df = pd.read_csv("Student_performance_data _.csv") # This is part of child class
 
 
 #Class definitions Start Here
+class userInput:
+    def __init__(self):
+        print("User Input initialized.")
+    #end
 
+    def askForInput(self, message="Give input"):
+        return input(message+":\t")
+    #end
+#end
 
 
 #Function definitions Start Here

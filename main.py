@@ -31,6 +31,10 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
+import config
+import class_1
+import class_2
+import os
 import logging
 
 '''
@@ -49,7 +53,8 @@ import logging
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+input = config.userInput()
+child1 = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,9 +69,15 @@ import logging
 #Class definitions Start Here
 
 
-
 #Function definitions Start Here
 def main():
+    command = "initial"
+    while command != "exit":
+        command = input.askForInput("hellow orld")
+        
+        print(command)
+    #end
+    
     pass
 #
 

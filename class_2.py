@@ -63,21 +63,21 @@ import logging
 
 #Class definitions Start Here
 class parent:
-    def __init__():
+    def __init__(self):
         test = True
     #end
 
-    def doSomething():
+    def doSomething(self):
         print("parent2")
     #end
 #end
 
 class child(parent):
-    def __init__():
+    def __init__(self):
         test = True
     #end
 
-    def inputPickle(pickle):
+    def inputPickle(self, pickle):
         print("child2")
     #end
 #end

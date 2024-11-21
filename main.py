@@ -70,12 +70,22 @@ child1 = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 
 
 #Function definitions Start Here
+def enactCommand(command):
+    if (command == "print"):
+        child1.printDataFrame()
+    elif (command == "exit"):
+        print("Exiting program...")
+        print("Thank you for using this program!")
+    else:
+        print("'"+command+"' is not a valid command.")
+    #end
+#end
+
 def main():
     command = "initial"
-    while command != "exit":
-        command = input.askForInput("hellow orld")
-        
-        print(command)
+    while (command != "exit"):
+        command = input.askForInput()
+        enactCommand(command)
     #end
     
     pass

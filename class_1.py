@@ -40,6 +40,8 @@ import numpy  as np
 import pandas as pd
 import logging
 import sys
+import seaborn as sns
+from   matplotlib import pyplot as plt
 '''
 from   matplotlib import pyplot as plt
 import mne
@@ -170,6 +172,29 @@ class parentCSV:
 
     def printDataFrameOriginal(self):
         print(self.df)
+
+    def plotAllColumnsHist(self,column_name, save=False, bins=10):    
+     if column_name in self.df.columns:
+        if self.df[column_name].dtype in [np.number, 'float64', 'int64']:
+            plt.figure(figsize=(10, 6))
+            plt.hist(self.df[column_name], bins=bins, edgecolor='black')
+            plt.title(f"Histogram of {column_name}")
+            plt.xlabel(column_name)
+            plt.ylabel("Frequency")
+            if save:
+                plt.savefig(f"Plots/{column_name}_histogram.png")
+            else:
+                plt.show()
+        elif self.df[column_name].dtype in ['object', 'category', 'bool']:
+            plt.figure(figsize=(10, 6))
+            self.df[column_name].value_counts().plot(kind='bar', edgecolor='black')
+            plt.title(f"Bar Chart of {column_name}")
+            plt.xlabel(column_name)
+            plt.ylabel("Frequency")
+            if save:
+                plt.savefig(f"Plots/{column_name}_bar_chart.png")
+            else:
+                plt.show()
     #end
 #end
 
@@ -191,6 +216,57 @@ class childCSV(parentCSV):
 
     def generateDataFrame(self):
         self.df = pd.read_csv(self.filepath)
+
+    ## Violin   
+    def Violin_GPA_vs_Gender(self):
+        plt.figure(figsize=(10, 6))
+        sns.violinplot(x='Gender', y='GPA', data=self.df)
+        plt.title('Violin Plot of GPA by Gender')
+        plt.xlabel('Gender')
+        plt.ylabel('GPA')
+        plt.show()
+
+    def Violin_StudyTimeWeekly_vs_ParentalSupport(self):
+        plt.figure(figsize=(10, 6))
+        sns.violinplot(x='ParentalSupport', y='StudyTimeWeekly', data=self.df)
+        plt.title('Violin Plot of StudyTimeWeekly by ParentalSupport')
+        plt.xlabel('Parental Support')
+        plt.ylabel('Weekly Study Time')
+        plt.show()
+
+## Box
+    def Box_Absences_vs_GradeClass(self):
+        plt.figure(figsize=(10, 6))
+        sns.boxplot(x='GradeClass', y='Absences', data=self.df)
+        plt.title('Box Plot of Absences by GradeClass')
+        plt.xlabel('Grade Class')
+        plt.ylabel('Absences')
+        plt.show()
+
+    def Box_GPA_vs_ParentalEducation(self):
+        plt.figure(figsize=(10, 6))
+        sns.boxplot(x='ParentalEducation', y='GPA', data=self.df)
+        plt.title('Box Plot of GPA by ParentalEducation')
+        plt.xlabel('Parental Education')
+        plt.ylabel('GPA')
+        plt.show()
+
+# Scatter 
+    def scatter_StudyTimeWeekly_vs_GPA(self):
+        plt.figure(figsize=(10, 6))
+        sns.scatterplot(x='StudyTimeWeekly', y='GPA', data=self.df)
+        plt.title('Scatter Plot of StudyTimeWeekly vs. GPA')
+        plt.xlabel('Weekly Study Time')
+        plt.ylabel('GPA')
+        plt.show()
+
+    def scatter_Age_vs_Absences(self):
+        plt.figure(figsize=(10, 6))
+        sns.scatterplot(x='Age', y='Absences', data=self.df)
+        plt.title('Scatter Plot of Age vs. Absences')
+        plt.xlabel('Age')
+        plt.ylabel('Absences')
+        plt.show()
     #end
 #end
 

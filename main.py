@@ -37,6 +37,7 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
+import pandas as pd
 import config
 import class_1
 import class_2
@@ -56,13 +57,15 @@ import logging
 
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+csv_path = "CSV_sterilizer/Student_performance_data.csv"
+dataframe = pd.read_csv(csv_path)
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 input = config.userInput()
+parentCSV = class_1.parentCSV(dataframe)
 classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 classPickle = class_2.child()
 commandList = (
@@ -166,6 +169,22 @@ def enactCommand(command):
     elif (command == "pickle"):
         handlingCSV = False
         print("Handling Pickles.")
+    elif (command == "print histogram" or command == "plot histogram"):
+     if handlingCSV:   
+        column_name = input.askForInput("Enter column name for histogram/bar chart: ")  
+        parentCSV.plotAllColumnsHist(column_name, save=True) 
+    elif (command == "studyTime vs parentalSupport"):
+     classCSV.Violin_StudyTimeWeekly_by_ParentalSupport()
+    elif (command == "GPA vs Gender"):
+        classCSV.Violin_GPA_vs_Gender()
+    elif (command == "Absences vs GradeClass"):
+        classCSV.Box_Absences_vs_GradeClass()
+    elif (command == "GPA vs ParentalEducation"):
+         classCSV.Box_GPA_by_ParentalEducation()
+    elif (command == "StudyTimeWeekly vs GPA"):
+        classCSV.scatter_StudyTimeWeekly_vs_GPA()
+    elif (command == "Age vs Absences"):
+        classCSV.scatter_Age_vs_Absences()
     elif (command == "exit" or command == "e"):
         print("Exiting program...")
         print("Thank you for using this program!")

@@ -53,14 +53,16 @@ import logging
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-input = config.userInput()
-child1 = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+input = config.userInput()
+classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
+classPickle = class_2.child()
 
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+handlingCSV = True
 
 #Global declarations Start Here
 
@@ -71,8 +73,26 @@ child1 = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 
 #Function definitions Start Here
 def enactCommand(command):
+    global handlingCSV
     if (command == "print"):
-        child1.printDataFrame()
+        if (handlingCSV):   classCSV.printDataFrame()
+        else:               classPickle.printPickle()
+    elif (command == "print columns"):
+        if (handlingCSV):   print(classCSV.requestColumn(input.askForInput("Column to print")))
+        else:               print("Unimplemented.")
+    elif (command == "datatype" or command == "data type"):
+        if (handlingCSV):   print("Handling CSV's.")
+        else:               print("Handling Pickles.")
+    elif (command == "switch"):
+        handlingCSV = not handlingCSV
+        if (handlingCSV):   print("Handling CSV's.")
+        else:               print("Handling Pickles.")
+    elif (command == "csv"):
+        handlingCSV = True
+        print("Handling CSV's.")
+    elif (command == "pickle"):
+        handlingCSV = False
+        print("Handling Pickles.")
     elif (command == "exit"):
         print("Exiting program...")
         print("Thank you for using this program!")

@@ -17,7 +17,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  11/20/2024
+Date Last Updated:  11/25/2024
 
 Doc:
     <***>
@@ -104,7 +104,7 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
     global commandList
     commandArgs = command.split(" ")
 
-    # TODOING: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
+    # TODONE: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
     # Might be able to do this by split()ing our command into arguments separated by spaces
     if (len(commandArgs) == 0 or command == ""):
         print("Please type a command.")
@@ -274,19 +274,22 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
     elif (command[0] == "exit" or command[0] == "e"):
         print("Exiting program...")
         print("Thank you for using this program!")
+        return True
     else:
         print("'"+command+"' is not a valid command.")
     #end
+    return False
 #end
 
 def main():
     command = "initial"
-    while (command != "exit" and command != "e"):
+    exiting = False
+    while (not exiting):
         print()
         command = input.askForInput()
-        enactCommand(command)
+        exiting = enactCommand(command)
     #end
-#
+#end
 
 #%% MAIN CODE                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Main code start here

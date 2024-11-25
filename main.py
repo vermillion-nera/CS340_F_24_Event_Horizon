@@ -286,7 +286,6 @@ def main():
         command = input.askForInput()
         enactCommand(command)
     #end
-    pass
 #
 
 #%% MAIN CODE                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

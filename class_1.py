@@ -173,6 +173,7 @@ class parentCSV:
     def printDataFrameOriginal(self):
         print(self.df)
 
+    # TODO: Have this export to a folder named "OUTPUT"
     def plotAllColumnsHist(self,column_name, save=False, bins=10):    
      if column_name in self.df.columns:
         if self.df[column_name].dtype in [np.number, 'float64', 'int64']:

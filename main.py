@@ -101,6 +101,8 @@ handlingCSV = True
 def enactCommand(command): # TODO: Implement try catch statement, and if it catches an error, log it and continue on (not enacting a command shouldn't break ).
     global handlingCSV
     global commandList
+    commandArgs = command.split(" ")
+
     # TODO: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
     # Might be able to do this by split()ing our command into arguments separated by spaces
     if (command == "help" or command == "commands"):

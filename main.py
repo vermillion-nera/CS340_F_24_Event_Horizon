@@ -131,16 +131,42 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
         print("Please type a command.")
     elif (commandArgs[0] == "help" or commandArgs[0] == "commands"): # TODO: Perhaps make help for subcommands?
         print("----------------------")
-        print("Available commands:")
-        for key in commandDict:
-            if (key%1 != 0):
-                print("  > "+commandDict[key])
+        if (len(commandArgs) > 1):
+            if (commandArgs[1] == "help"):
+                print("Available 'help' subcommands:")
+                for key in commandDict:
+                    if (key%1 == 0):
+                        print("> "+commandDict[key])
+                    #end
+                #end
             else:
-                print("> "+commandDict[key])
+                commandKey = -1
+                hasSubcommands = False
+                for key in commandDict:
+                    if (commandDict[key] == commandArgs[1] and key%1 == 0):
+                        commandKey = key
+                    elif ((key - commandKey) > 0 and (key - commandKey) < 1):
+                        if (not hasSubcommands):
+                            print("Available '"+commandArgs[1]+"' subcommands:")
+                        #end
+                        hasSubcommands = True
+                        print("> "+commandDict[key])
+                    #end
+                #end
+                if (not hasSubcommands):
+                    print("No subcommands for '"+commandArgs[1]+"'.")
+                #end
+            #end
+        else:
+            print("Available commands:")
+            for key in commandDict:
+                if (key%1 != 0):
+                    print("  > "+commandDict[key])
+                else:
+                    print("> "+commandDict[key])
+                #end
             #end
         #end
-        # for item in commandList:
-        #     print("> "+item)
         print("----------------------")
     # -------------- TEST FUNCTIONS --------------
     elif (command == "print histogram" or command == "plot histogram"):

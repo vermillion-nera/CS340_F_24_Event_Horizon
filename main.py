@@ -68,26 +68,7 @@ input = config.userInput()
 parentCSV = class_1.parentCSV(dataframe)
 classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 classPickle = class_2.child()
-# TODONE: Somehow, we need to make this a little friendlier. Not sure how.
-commandList = ( # TODONE: Put this into a dictionary
-    "help",
-    "print",
-    "print unshaped",
-    "print columns",
-    "print rows",
-    "print query",
-    "filter columns",
-    "filter rows",
-    "filter query",
-    "filter reset",
-    "datatype",
-    "switch",
-    "csv",
-    "pickle",
-    "exit",
-)
-
-commandDict = {
+commandDict = { # TODONE: Put this into a dictionary
     0: "help",
     1: "print",
     1.01: "[optional]:",

@@ -69,7 +69,7 @@ parentCSV = class_1.parentCSV(dataframe)
 classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 classPickle = class_2.child()
 # TODO: Somehow, we need to make this a little friendlier. Not sure how.
-commandList = ( # TODO: Put this into a dictionary
+commandList = ( # TODOING: Put this into a dictionary
     "help",
     "print",
     "print unshaped",
@@ -86,6 +86,26 @@ commandList = ( # TODO: Put this into a dictionary
     "pickle",
     "exit",
 )
+
+commandDict = {
+    0: "help",
+    1: "print",
+    1.01: "",
+    1.02: "unshaped",
+    1.03: "columns",
+    1.04: "rows",
+    1.05: "query",
+    2: "filter",
+    2.01: "columns",
+    2.02: "rows",
+    2.03: "query",
+    2.04: "reset",
+    3: "datatype",
+    4: "switch",
+    5: "csv",
+    6: "pickle",
+    7: "exit",
+}
 
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

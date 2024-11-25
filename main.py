@@ -68,8 +68,8 @@ input = config.userInput()
 parentCSV = class_1.parentCSV(dataframe)
 classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 classPickle = class_2.child()
-# TODO: Somehow, we need to make this a little friendlier. Not sure how.
-commandList = ( # TODOING: Put this into a dictionary
+# TODONE: Somehow, we need to make this a little friendlier. Not sure how.
+commandList = ( # TODONE: Put this into a dictionary
     "help",
     "print",
     "print unshaped",
@@ -90,7 +90,7 @@ commandList = ( # TODOING: Put this into a dictionary
 commandDict = {
     0: "help",
     1: "print",
-    1.01: "",
+    1.01: "[optional]:",
     1.02: "unshaped",
     1.03: "columns",
     1.04: "rows",
@@ -122,6 +122,7 @@ handlingCSV = True
 def enactCommand(command): # TODO: Implement try catch statement, and if it catches an error, log it and continue on (not enacting a command shouldn't break ).
     global handlingCSV
     global commandList
+    global commandDict
     commandArgs = command.split(" ")
 
     # TODONE: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
@@ -131,8 +132,15 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
     elif (commandArgs[0] == "help" or commandArgs[0] == "commands"): # TODO: Perhaps make help for subcommands?
         print("----------------------")
         print("Available commands:")
-        for item in commandList:
-            print("> "+item)
+        for key in commandDict:
+            if (key%1 != 0):
+                print("  > "+commandDict[key])
+            else:
+                print("> "+commandDict[key])
+            #end
+        #end
+        # for item in commandList:
+        #     print("> "+item)
         print("----------------------")
     # -------------- TEST FUNCTIONS --------------
     elif (command == "print histogram" or command == "plot histogram"):

@@ -129,7 +129,7 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
     # Might be able to do this by split()ing our command into arguments separated by spaces
     if (len(commandArgs) == 0 or command == ""):
         print("Please type a command.")
-    elif (commandArgs[0] == "help" or commandArgs[0] == "commands"): # TODO: Perhaps make help for subcommands?
+    elif (commandArgs[0] == "help" or commandArgs[0] == "commands"): # TODONE: Perhaps make help for subcommands?
         print("----------------------")
         if (len(commandArgs) > 1):
             if (commandArgs[1] == "help"):

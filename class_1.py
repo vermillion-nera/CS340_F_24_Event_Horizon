@@ -196,10 +196,12 @@ class parentCSV:
             else:
                 plt.show()
     #end
+
+    # TODO: Add a line plot function
 #end
 
 class childCSV(parentCSV):
-    def __init__(self, csv):
+    def __init__(self, csv): # TODO: Rename this to csv_path
         self.filepath = csv
         super().__init__(pd.read_csv(csv))
         print("CSV child initialized.")
@@ -216,6 +218,8 @@ class childCSV(parentCSV):
 
     def generateDataFrame(self):
         self.df = pd.read_csv(self.filepath)
+
+    # TODO: Implement boolean indexing query here
 
     ## Violin   
     def Violin_GPA_vs_Gender(self):

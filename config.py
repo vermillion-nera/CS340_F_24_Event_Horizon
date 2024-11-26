@@ -60,6 +60,7 @@ TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# TODO: This might also need to be in its own module, maybe
 logging.basicConfig(          #sets up root logger
     filename = "log_1.log",
     encoding = "utf-8",
@@ -83,7 +84,7 @@ logging.basicConfig(          #sets up root logger
 
 
 #Class definitions Start Here
-class userInput:
+class userInput: # TODO: Put this in its own module? Don't put it in config; config is for constants only
     def __init__(self):
         print("User Input initialized.")
     #end

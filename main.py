@@ -33,7 +33,8 @@ if __name__ == "__main__":
 #
 
 #custom imports
-
+# TODO: Move custom modules heree
+# from config import TEST # example import variable
 
 #other imports
 from   copy       import deepcopy as dpcpy
@@ -54,10 +55,10 @@ import seaborn as sns
 import logging
 '''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+# TODO: Possibly place user input here
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+# TODO: use "nonlocal" and "private like" somewhere
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 csv_path = "CSV_sterilizer/Student_performance_data.csv"

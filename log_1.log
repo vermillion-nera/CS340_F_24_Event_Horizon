@@ -10,3 +10,24 @@
 2024-11-20 21:51 - INFO - This message will be printed to the console and saved to the file.
 2024-11-20 21:52 - INFO - This message will be printed to the console and saved to the file.
 2024-11-20 23:06 - WARNING - hello
+2024-11-26 13:28 - ERROR - Invalid command entered
+2024-11-26 13:29 - ERROR - Invalid command entered
+2024-11-26 13:30 - ERROR - Invalid command entered
+2024-11-26 13:35 - ERROR - Invalid command entered
+2024-11-26 13:35 - ERROR - Invalid command entered
+2024-11-26 13:36 - ERROR - Invalid command entered
+2024-11-26 13:36 - ERROR - Invalid command entered
+2024-11-26 13:36 - ERROR - Invalid command entered
+2024-11-26 13:37 - ERROR - Invalid command entered
+2024-11-26 13:38 - ERROR - print
+2024-11-26 13:39 - ERROR - & C:/Users/babri/anaconda3/python.exe "c:/Users/babri/OneDrive/Documents/CMPS 3400 Final Project/CS340_F_24_Event_Horizon/main.py"
+2024-11-26 13:39 - ERROR - Invalid command entered
+2024-11-26 13:39 - ERROR - print
+2024-11-26 13:39 - ERROR - exit
+2024-11-26 13:41 - ERROR - Invalid command entered
+2024-11-26 13:44 - INFO - print
+2024-11-26 13:44 - INFO - sljfafslkfjasf
+2024-11-26 13:44 - ERROR - Invalid command entered
+2024-11-26 13:45 - INFO - exit
+2024-11-26 13:47 - INFO - print
+2024-11-26 13:48 - INFO - e

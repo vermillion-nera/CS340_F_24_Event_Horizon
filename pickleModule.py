@@ -1,5 +1,5 @@
 #%% MODULE BEGINS
-module_name = "class_2"
+module_name = "pickleModule"
 
 '''
 Version: 0.1
@@ -14,7 +14,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  11/20/2024
+Date Last Updated:  11/26/2024
 
 Doc:
     <***>
@@ -30,11 +30,11 @@ if __name__ == "__main__":
 #
 
 #custom imports
-
+import logging
 
 #other imports
 from   copy       import deepcopy as dpcpy
-import logging
+
 
 '''
 from   matplotlib import pyplot as plt

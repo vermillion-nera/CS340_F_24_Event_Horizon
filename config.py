@@ -62,7 +62,7 @@ TEST = True
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # TODO: This might also need to be in its own module, maybe
 logging.basicConfig(          #sets up root logger
-    filename = "log_1.log",
+    filename = "OUTPUT/log_1.log",
     encoding = "utf-8",
     filemode = "a",
     format = "{asctime} - {levelname} - {message}",

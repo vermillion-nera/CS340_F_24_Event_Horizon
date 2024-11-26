@@ -69,6 +69,7 @@ input = config.userInput()
 parentCSV = class_1.parentCSV(dataframe)
 classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 classPickle = class_2.child()
+# TODO: Possibly have every single option in the dictionary instead of the if/elif chain?
 commandDict = { # TODONE: Put this into a dictionary
     0: "help",
     1: "print",
@@ -116,23 +117,23 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
         if (len(commandArgs) > 1):
             if (commandArgs[1] == "help"):
                 print("Available 'help' subcommands:")
-                for key in commandDict:
+                for key, comm in commandDict.items():
                     if (key%1 == 0):
-                        print("> "+commandDict[key])
+                        print("> "+comm)
                     #end
                 #end
             else:
                 commandKey = -1
                 hasSubcommands = False
-                for key in commandDict:
-                    if (commandDict[key] == commandArgs[1] and key%1 == 0):
+                for key, comm in commandDict.items():
+                    if (comm == commandArgs[1] and key%1 == 0):
                         commandKey = key
                     elif ((key - commandKey) > 0 and (key - commandKey) < 1):
                         if (not hasSubcommands):
                             print("Available '"+commandArgs[1]+"' subcommands:")
                         #end
                         hasSubcommands = True
-                        print("> "+commandDict[key])
+                        print("> "+comm)
                     #end
                 #end
                 if (not hasSubcommands):
@@ -141,11 +142,11 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
             #end
         else:
             print("Available commands:")
-            for key in commandDict:
+            for key, comm in commandDict.items():
                 if (key%1 != 0):
-                    print("  > "+commandDict[key])
+                    print("  > "+comm)
                 else:
-                    print("> "+commandDict[key])
+                    print("> "+comm)
                 #end
             #end
         #end

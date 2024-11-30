@@ -2,22 +2,16 @@
 module_name = 'main'
 
 '''
-Version: 1.0
+Version: <***>
 
 Description:
-    Imports the classes from class_1, class_2, and
-    config. Also runs the entire program, asking
-    the user for commands and enacting them until
-    the user types 'exit'.
+    <***>
 
 Authors:
-    Christian Bankovic
-    Wren Caillouet
-    Maxwell Benson
-    Brian Britton
+    <***>
 
-Date Created     :  11/20/2024
-Date Last Updated:  11/20/2024
+Date Created     :  <***>
+Date Last Updated:  <***>
 
 Doc:
     <***>
@@ -33,26 +27,16 @@ if __name__ == "__main__":
 #
 
 #custom imports
-
+import config
+import dataFrameModule
+import pickleModule
 
 #other imports
 from   copy       import deepcopy as dpcpy
-import pandas as pd
-import config
-import class_1
-import class_2
 import os
 import logging
+import sys
 
-'''
-from   matplotlib import pyplot as plt
-import mne
-import numpy  as np 
-import os
-import pandas as pd
-import seaborn as sns
-import logging
-'''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -67,19 +51,16 @@ logger = logging.getLogger(__name__)
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 input = config.userInput()
-parentCSV = class_1.parentCSV(dataframe)
-classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
-classPickle = class_2.child()
-commandList = ( # TODO: Put this into a dictionary
+classCSV = dataFrameModule.csvHandler("INPUT/Student_performance_data.csv")
+classPickle = pickleModule.child()
+commandList = (
     "help",
     "print",
     "print unshaped",
     "print columns",
     "print rows",
-    "print query",
     "filter columns",
     "filter rows",
-    "filter query",
     "filter reset",
     "datatype",
     "switch",
@@ -216,10 +197,12 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
 def main():
     command = "initial"
     while (command != "exit" and command != "e"):
-        print()
         command = input.askForInput()
         enactCommand(command)
     #end
+    
+    pass
+#
     
     #
 

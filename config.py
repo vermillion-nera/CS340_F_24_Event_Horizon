@@ -74,7 +74,7 @@ TEST = True
 
 
 #Class definitions Start Here
-class userInput:
+class userInput: # TODO: Put this in its own module? Don't put it in config; config is for constants only
     def __init__(self):
         print("User Input initialized.")
     #end

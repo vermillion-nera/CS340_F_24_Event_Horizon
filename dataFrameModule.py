@@ -1,5 +1,5 @@
 #%% MODULE BEGINS
-module_name = "class_1"
+module_name = "dataFrameModule"
 
 '''
 Version: 1.0
@@ -15,7 +15,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  11/20/2024
+Date Last Updated:  11/26/2024
 
 Doc:
     <***>
@@ -31,11 +31,10 @@ if __name__ == "__main__":
 #
 
 #custom imports
-
+import config
 
 #other imports
 from   copy       import deepcopy as dpcpy
-import config
 import numpy  as np
 import pandas as pd
 import logging
@@ -73,11 +72,11 @@ logger = logging.getLogger(__name__)
 
 
 #Class definitions Start Here
-class parentCSV:
+class dataFrameHandler:
     def __init__(self, dataframe):
         self.df = dataframe
         self.shaped = dataframe
-        print("CSV parent initialized.")
+        print("dataFrameHandler initialized.")
     #end
 
     def getDataFrame(self):
@@ -173,6 +172,7 @@ class parentCSV:
     def printDataFrameOriginal(self):
         print(self.df)
 
+    # TODO: Have this export to a folder named "OUTPUT"
     def plotAllColumnsHist(self,column_name, save=False, bins=10):    
      if column_name in self.df.columns:
         if self.df[column_name].dtype in [np.number, 'float64', 'int64']:
@@ -182,7 +182,7 @@ class parentCSV:
             plt.xlabel(column_name)
             plt.ylabel("Frequency")
             if save:
-                plt.savefig(f"Plots/{column_name}_histogram.png")
+                plt.savefig(f"OUTPUT/{column_name}_histogram.png")
             else:
                 plt.show()
         elif self.df[column_name].dtype in ['object', 'category', 'bool']:
@@ -192,16 +192,18 @@ class parentCSV:
             plt.xlabel(column_name)
             plt.ylabel("Frequency")
             if save:
-                plt.savefig(f"Plots/{column_name}_bar_chart.png")
+                plt.savefig(f"OUTPUT/{column_name}_bar_chart.png")
             else:
                 plt.show()
     #end
+
+    # TODO: Add a line plot function
 #end
 
-class childCSV(parentCSV):
-    def __init__(self, csv):
-        self.filepath = csv
-        super().__init__(pd.read_csv(csv))
+class csvHandler(dataFrameHandler):
+    def __init__(self, csv_path):
+        self.filepath = csv_path
+        super().__init__(pd.read_csv(csv_path))
         print("CSV child initialized.")
     #end
 
@@ -216,6 +218,8 @@ class childCSV(parentCSV):
 
     def generateDataFrame(self):
         self.df = pd.read_csv(self.filepath)
+
+    # TODO: Implement boolean indexing query here
 
     ## Violin   
     def Violin_GPA_vs_Gender(self):

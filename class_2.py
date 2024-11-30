@@ -35,6 +35,7 @@ if __name__ == "__main__":
 #other imports
 from   copy       import deepcopy as dpcpy
 import logging
+import pickle
 
 '''
 from   matplotlib import pyplot as plt
@@ -67,8 +68,10 @@ import sys
 
 #Class definitions Start Here
 class parent:
-    def __init__(self):
+    def __init__(self, pickle):
+        self.df = pickle
         test = True
+
         print("Pickle parent initialized.")
     #end
 

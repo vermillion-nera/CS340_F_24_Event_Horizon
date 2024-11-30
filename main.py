@@ -205,8 +205,14 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
         logging.error("Invalid command entered")
         print(e)
 
+
         #end
     #end
+    except pd.errors.UndefinedVariableError as e:
+        logging.error("Invalid query input")
+        print("Invalid query input")
+
+    
 def main():
     command = "initial"
     while (command != "exit" and command != "e"):

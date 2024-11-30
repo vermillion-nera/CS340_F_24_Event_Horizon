@@ -42,3 +42,8 @@
 2024-11-26 13:58 - ERROR - Invalid Query input
 2024-11-26 14:00 - INFO - sfalkfja
 2024-11-26 14:00 - ERROR - Invalid command entered
+2024-11-30 13:00 - INFO - print
+2024-11-30 13:21 - INFO - & C:/Users/babri/anaconda3/python.exe "c:/Users/babri/OneDrive/Documents/CMPS 3400 Final Project/CS340_F_24_Event_Horizon/main.py"
+2024-11-30 13:21 - ERROR - Invalid command entered
+2024-11-30 13:21 - INFO - exit
+2024-11-30 13:21 - INFO - print

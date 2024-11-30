@@ -60,17 +60,7 @@ TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-logging.basicConfig(          #sets up root logger
-    level = logging.INFO,
-    filename = "log_1.log",
-    encoding = "utf-8",
-    filemode = "a",
-    format = "{asctime} - {levelname} - {message}",
-    style = "{",
-    datefmt = "%Y-%m-%d %H:%M",
-    
 
-)
 
 
 

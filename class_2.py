@@ -30,12 +30,14 @@ if __name__ == "__main__":
 #
 
 #custom imports
-
+import class_1
 
 #other imports
 from   copy       import deepcopy as dpcpy
 import logging
 import pickle
+import pandas as pd
+
 
 '''
 from   matplotlib import pyplot as plt
@@ -54,11 +56,13 @@ import sys
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+csv_path = "CSV_sterilizer/Student_performance_data.csv"
+dataframe = pd.read_csv(csv_path)
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+parentCSV = class_1.parentCSV(dataframe)
+classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -69,11 +73,14 @@ import sys
 #Class definitions Start Here
 class parent:
     def __init__(self, pickle):
-        self.df = pickle
+        self.pk = pickle
         test = True
 
         print("Pickle parent initialized.")
     #end
+
+    def create_Pickle_File(self):
+        
 
     def printPickle(self):
         print("printingPickle")

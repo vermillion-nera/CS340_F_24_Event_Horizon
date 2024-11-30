@@ -118,24 +118,24 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
                 print("> "+item)
             print("----------------------")
         elif (command == "print"):
-            if (handlingCSV):   classCSV.printDataFrame()
+            if (handlingCSV):   csv_manager.printDataFrame()
             else:               classPickle.printPickle()
         elif (command == "print unshaped" or command == "print original"):
-            if (handlingCSV):   classCSV.printDataFrameOriginal()
+            if (handlingCSV):   csv_manager.printDataFrameOriginal()
             else:               classPickle.printPickle()
         elif (command == "print columns" or command == "print column"):
-            if (handlingCSV):   classCSV.printColumns(input.askForInput("Columns to print"))
+            if (handlingCSV):   csv_manager.printColumns(input.askForInput("Columns to print"))
             else:               print("Unimplemented.")
         elif (command == "print rows" or command == "print row"):
-            if (handlingCSV):   classCSV.printRows(input.askForInput("Rows to print"))
+            if (handlingCSV):   csv_manager.printRows(input.askForInput("Rows to print"))
             else:               print("Unimplemented.")
         elif (command == "print query"):
-            if (handlingCSV):   classCSV.printQuery(input.askForInput("Query"))
+            if (handlingCSV):   csv_manager.printQuery(input.askForInput("Query"))
             else:               print("Unimplemented.")
         elif (command == "filter columns" or command == "filter column"):
             if (handlingCSV):
                 answer = input.askForInput("Columns to filter")
-                classCSV.filterColumns(answer)
+                csv_manager.filterColumns(answer)
                 print("Filtered by '"+answer+"' columns.")
             else:
                 print("Unimplemented.")
@@ -143,7 +143,7 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
         elif (command == "filter rows" or command == "filter row."):
             if (handlingCSV):
                 answer = input.askForInput("Rows to filter")
-                classCSV.filterRows(answer)
+                csv_manager.filterRows(answer)
                 print("Filtered by '"+answer+"' rows.")
             else:
                 print("Unimplemented.")
@@ -151,14 +151,14 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
         elif (command == "filter query"):
             if (handlingCSV):
                 answer = input.askForInput("Query")
-                classCSV.filterQuery(answer)
+                csv_manager.filterQuery(answer)
                 print("Filtered by '"+answer+"'.")
             else:
                 print("Unimplemented.")
             #end
         elif (command == "filter reset"):
             if (handlingCSV):
-                classCSV.resetShape()
+                csv_manager.resetShape()
                 print("Dataframe filter reset.")
             else:
                 print("Unimplemented.")
@@ -182,17 +182,17 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
                 column_name = input.askForInput("Enter column name for histogram/bar chart: ")  
                 dataframe_manager.plotAllColumnsHist(column_name, save=True) 
         elif (command == "studyTime vs parentalSupport"):
-            classCSV.Violin_StudyTimeWeekly_vs_ParentalSupport() #indentation?
+            csv_manager.Violin_StudyTimeWeekly_vs_ParentalSupport() #indentation?
         elif (command == "GPA vs Gender"):
-            classCSV.Violin_GPA_vs_Gender()
+            csv_manager.Violin_GPA_vs_Gender()
         elif (command == "Absences vs GradeClass"):
-            classCSV.Box_Absences_vs_GradeClass()
+            csv_manager.Box_Absences_vs_GradeClass()
         elif (command == "GPA vs ParentalEducation"):
-            classCSV.Box_GPA_vs_ParentalEducation()
+            csv_manager.Box_GPA_vs_ParentalEducation()
         elif (command == "StudyTimeWeekly vs GPA"):
-            classCSV.scatter_StudyTimeWeekly_vs_GPA()
+            csv_manager.scatter_StudyTimeWeekly_vs_GPA()
         elif (command == "Age vs Absences"):
-            classCSV.scatter_Age_vs_Absences()
+            csv_manager.scatter_Age_vs_Absences()
         elif (command == "exit" or command == "e"):
             print("Exiting program...")
             print("Thank you for using this program!")

@@ -14,7 +14,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  11/26/2024
+Date Last Updated:  11/30/2024
 
 Doc:
     <***>
@@ -30,10 +30,13 @@ if __name__ == "__main__":
 #
 
 #custom imports
-import logging
+import dataFrameModule
 
 #other imports
 from   copy       import deepcopy as dpcpy
+import logging
+import pickle
+import pandas as pd
 
 
 '''
@@ -53,11 +56,13 @@ import sys
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+csv_path = "INPUT/Student_performance_data.csv"
+dataframe = pd.read_csv(csv_path)
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+dataFrameHandler = dataFrameModule.dataFrameHandler(dataframe)
+csvHandler = dataFrameModule.csvHandler(csv_path)
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -67,10 +72,15 @@ import sys
 
 #Class definitions Start Here
 class parent:
-    def __init__(self):
+    def __init__(self, pickle):
+        self.pk = pickle
         test = True
+
         print("Pickle parent initialized.")
     #end
+
+    def create_Pickle_File(self):
+        print("DO SOMETHING")
 
     def printPickle(self):
         print("printingPickle")

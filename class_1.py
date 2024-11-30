@@ -15,7 +15,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  11/25/2024
+Date Last Updated:  11/20/2024
 
 Doc:
     <***>
@@ -173,7 +173,6 @@ class parentCSV:
     def printDataFrameOriginal(self):
         print(self.df)
 
-    # TODO: Have this export to a folder named "OUTPUT"
     def plotAllColumnsHist(self,column_name, save=False, bins=10):    
      if column_name in self.df.columns:
         if self.df[column_name].dtype in [np.number, 'float64', 'int64']:
@@ -197,12 +196,10 @@ class parentCSV:
             else:
                 plt.show()
     #end
-
-    # TODO: Add a line plot function
 #end
 
 class childCSV(parentCSV):
-    def __init__(self, csv): # TODO: Rename this to csv_path
+    def __init__(self, csv):
         self.filepath = csv
         super().__init__(pd.read_csv(csv))
         print("CSV child initialized.")
@@ -219,8 +216,6 @@ class childCSV(parentCSV):
 
     def generateDataFrame(self):
         self.df = pd.read_csv(self.filepath)
-
-    # TODO: Implement boolean indexing query here
 
     ## Violin   
     def Violin_GPA_vs_Gender(self):

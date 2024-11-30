@@ -33,30 +33,12 @@ if __name__ == "__main__":
 
 #custom imports
 
-
 #other imports
-from   copy       import deepcopy as dpcpy
-import numpy as np
-import pandas as pd
-import os
-import logging
-import sys
 
-'''
-from   matplotlib import pyplot as plt
-import mne
-import numpy  as np 
-import os
-import pandas as pd
-import seaborn as sns
-import logging
-import sys
-'''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TEST = True
+csv_path = "INPUT/Student_performance_data.csv"
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

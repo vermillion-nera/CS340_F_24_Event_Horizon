@@ -61,15 +61,18 @@ import logging
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-csv_path = "INPUT/Student_performance_data.csv"
-dataframe = pd.read_csv(csv_path)
-logger = logging.getLogger(__name__)
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 input = config.userInput()
+logger = logging.getLogger(__name__)
+
+csv_manager = dataframe_module.csv_manager(config.csv_path)
+
+dataframe = pd.read_csv(config.csv_path)
 dataframe_manager = dataframe_module.dataframe_manager(dataframe)
-csv_manager = dataframe_module.csv_manager(csv_path)
+
+
 classPickle = pickle_module.math_wizard()
 commandList = ( # TODO: Put this into a dictionary
     "help",

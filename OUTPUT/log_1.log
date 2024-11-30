@@ -1,3 +1,18 @@
 2024-11-30 15:57 - INFO - help
 2024-11-30 15:57 - INFO - sdfgd
 2024-11-30 15:57 - ERROR - Invalid command entered
+2024-11-30 15:59 - INFO - & C:/Users/chrca/anaconda3/python.exe "c:/Users/chrca/Documents/CMPS 340/CS340_F_24_Event_Horizon/CS340_F_24_Event_Horizon/main.py"
+2024-11-30 15:59 - ERROR - Invalid command entered
+2024-11-30 15:59 - INFO - help
+2024-11-30 15:59 - INFO - exit 
+2024-11-30 15:59 - ERROR - Invalid command entered
+2024-11-30 15:59 - INFO - exit
+2024-11-30 15:59 - INFO - help
+2024-11-30 15:59 - INFO - print
+2024-11-30 15:59 - INFO - print unshaped
+2024-11-30 15:59 - INFO - print rows
+2024-11-30 16:00 - INFO - print columns
+2024-11-30 16:00 - INFO - filter rows
+2024-11-30 16:00 - INFO - print
+2024-11-30 16:00 - INFO - print columns
+2024-11-30 16:00 - INFO - exit

@@ -5,7 +5,7 @@ module_name = 'main'
 Version: 1.0
 
 Description:
-    Imports the classes from class_1, class_2, and
+    Imports the classes from dataframe_module, pickle_module, and
     config. Also runs the entire program, asking
     the user for commands and enacting them until
     the user types 'exit'.
@@ -33,16 +33,17 @@ if __name__ == "__main__":
 #
 
 #custom imports
-
+import dataframe_module
+import pickle_module
+import logging
+import config
 
 #other imports
 from   copy       import deepcopy as dpcpy
 import pandas as pd
-import config
-import class_1
-import class_2
+import logger
 import os
-import logging
+
 
 '''
 from   matplotlib import pyplot as plt
@@ -60,16 +61,16 @@ import logging
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-csv_path = "CSV_sterilizer/Student_performance_data.csv"
+csv_path = "INPUT/Student_performance_data.csv"
 dataframe = pd.read_csv(csv_path)
 logger = logging.getLogger(__name__)
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 input = config.userInput()
-parentCSV = class_1.parentCSV(dataframe)
-classCSV = class_1.childCSV("CSV_sterilizer/Student_performance_data.csv")
-classPickle = class_2.child()
+dataframe_manager = dataframe_module.dataframe_manager(dataframe)
+csv_manager = dataframe_module.csv_manager(csv_path)
+classPickle = pickle_module.math_wizard()
 commandList = ( # TODO: Put this into a dictionary
     "help",
     "print",
@@ -179,7 +180,7 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
         elif (command == "print histogram" or command == "plot histogram"):
             if handlingCSV:   #indentation?
                 column_name = input.askForInput("Enter column name for histogram/bar chart: ")  
-                parentCSV.plotAllColumnsHist(column_name, save=True) 
+                dataframe_manager.plotAllColumnsHist(column_name, save=True) 
         elif (command == "studyTime vs parentalSupport"):
             classCSV.Violin_StudyTimeWeekly_vs_ParentalSupport() #indentation?
         elif (command == "GPA vs Gender"):

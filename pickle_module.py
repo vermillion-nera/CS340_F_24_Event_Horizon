@@ -1,13 +1,11 @@
 #%% MODULE BEGINS
-module_name = 'config'
+module_name = "pickle_module"
 
 '''
 Version: 0.1
 
 Description:
-    WIP class designed to hold functions used
-    across several modules, the most notable
-    being the logger and the user input.
+    WIP class meant to handle Pickle files.
 
 Authors:
     Christian Bankovic
@@ -36,11 +34,7 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
-import numpy as np
-import pandas as pd
-import os
 import logging
-import sys
 
 '''
 from   matplotlib import pyplot as plt
@@ -56,12 +50,14 @@ import sys
 
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -70,13 +66,25 @@ TEST = True
 
 
 #Class definitions Start Here
-class userInput:
+class pickle_manager:
     def __init__(self):
-        print("User Input initialized.")
+        test = True
+        print("Pickle parent initialized.")
     #end
 
-    def askForInput(self, message="Give input"):
-        return input(message+":\t")
+    def printPickle(self):
+        print("printingPickle")
+    #end
+#end
+
+class math_wizard(pickle_manager):
+    def __init__(self):
+        test = True
+        print("Pickle child initialized.")
+    #end
+
+    def inputPickle(self, pickle):
+        print("this is supposed to input a pickle")
     #end
 #end
 

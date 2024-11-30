@@ -1,11 +1,13 @@
 #%% MODULE BEGINS
-module_name = "class_2"
+module_name = 'logger'
 
 '''
 Version: 0.1
 
 Description:
-    WIP class meant to handle Pickle files.
+    WIP class designed to hold functions used
+    across several modules, the most notable
+    being the logger and the user input.
 
 Authors:
     Christian Bankovic
@@ -34,25 +36,29 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
-import logging
-
-'''
-from   matplotlib import pyplot as plt
-import mne
-import numpy  as np 
-import os
+import numpy as np
 import pandas as pd
-import seaborn as sns
+import os
 import logging
 import sys
-'''
+
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TEST = True
 
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+logging.basicConfig(          #sets up root logger
+    level = logging.INFO,
+    filename = "OUTPUT\log_1.log",
+    encoding = "utf-8",
+    filemode = "a",
+    format = "{asctime} - {levelname} - {message}",
+    style = "{",
+    datefmt = "%Y-%m-%d %H:%M",
+)
 
 
 
@@ -66,27 +72,6 @@ import sys
 
 
 #Class definitions Start Here
-class parent:
-    def __init__(self):
-        test = True
-        print("Pickle parent initialized.")
-    #end
-
-    def printPickle(self):
-        print("printingPickle")
-    #end
-#end
-
-class child(parent):
-    def __init__(self):
-        test = True
-        print("Pickle child initialized.")
-    #end
-
-    def inputPickle(self, pickle):
-        print("this is supposed to input a pickle")
-    #end
-#end
 
 
 #Function definitions Start Here

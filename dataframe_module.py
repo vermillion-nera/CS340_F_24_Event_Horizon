@@ -1,5 +1,5 @@
 #%% MODULE BEGINS
-module_name = "class_1"
+module_name = "dataframe_module"
 
 '''
 Version: 1.0
@@ -73,11 +73,11 @@ logger = logging.getLogger(__name__)
 
 
 #Class definitions Start Here
-class parentCSV:
+class dataframe_manager:
     def __init__(self, dataframe):
         self.df = dataframe
         self.shaped = dataframe
-        print("CSV parent initialized.")
+        print("Dataframe manager initialized.")
     #end
 
     def getDataFrame(self):
@@ -198,11 +198,11 @@ class parentCSV:
     #end
 #end
 
-class childCSV(parentCSV):
-    def __init__(self, csv):
-        self.filepath = csv
-        super().__init__(pd.read_csv(csv))
-        print("CSV child initialized.")
+class csv_manager(dataframe_manager):
+    def __init__(self, csv_path):
+        self.filepath = csv_path
+        super().__init__(pd.read_csv(csv_path))
+        print("CSV manager initialized.")
     #end
 
     def setFilepath(self, filepath):

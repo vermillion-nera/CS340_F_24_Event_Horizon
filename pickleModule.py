@@ -71,7 +71,7 @@ csvHandler = dataFrameModule.csvHandler(csv_path)
 
 
 #Class definitions Start Here
-class pickleHandler:
+class parent:
     def __init__(self, pickle):
         self.pk = pickle
         test = True
@@ -87,7 +87,7 @@ class pickleHandler:
     #end
 #end
 
-class mathWizard(pickleHandler):
+class child(parent):
     def __init__(self):
         test = True
         print("Pickle child initialized.")

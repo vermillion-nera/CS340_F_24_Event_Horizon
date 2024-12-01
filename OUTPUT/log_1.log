@@ -37,3 +37,25 @@
 2024-11-30 20:01 - INFO - exit
 2024-11-30 20:01 - INFO - help
 2024-11-30 20:01 - INFO - exit
+2024-11-30 20:11 - INFO - datatype
+2024-11-30 20:11 - INFO - print
+2024-11-30 20:11 - INFO - datatype
+2024-11-30 20:11 - INFO - switch
+2024-11-30 20:12 - INFO - csv
+2024-11-30 20:12 - INFO - test
+2024-11-30 20:12 - INFO - test
+2024-11-30 20:12 - INFO - test
+2024-11-30 20:19 - INFO - e
+2024-11-30 20:19 - INFO - tet
+2024-11-30 20:19 - ERROR - Invalid command entered
+2024-11-30 20:20 - INFO - help
+2024-11-30 20:20 - INFO - help help
+2024-11-30 20:20 - INFO - help exit
+2024-11-30 20:20 - INFO - print
+2024-11-30 20:20 - INFO - switch
+2024-11-30 20:20 - INFO - print
+2024-11-30 20:20 - INFO - switch
+2024-11-30 20:20 - INFO - export
+2024-11-30 20:20 - INFO - test
+2024-11-30 20:20 - ERROR - Invalid command entered
+2024-11-30 20:20 - INFO - e

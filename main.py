@@ -293,22 +293,47 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
                 else:
                     print("Unimplemented.")
                 #end
-    #end
+        # -------------- EXPORTING --------------
+        elif (commandArgs[0] == "export"): # TODO: Allow for exporting the filtered table into a CSV/TXT file
+            print("Unimplemented.")
+        # -------------- CLASS SWAPPING --------------
+        elif (commandArgs[0] == "datatype" or commandArgs[0] == "type"):
+            if (handlingCSV):   print("Handling CSV's.")
+            else:               print("Handling Pickles.")
+        elif (commandArgs[0] == "switch"):
+            handlingCSV = not handlingCSV
+            if (handlingCSV):   print("Handling CSV's.")
+            else:               print("Handling Pickles.")
+        elif (commandArgs[0] == "csv"):
+            handlingCSV = True
+            print("Handling CSV's.")
+        elif (commandArgs[0] == "pickle"):
+            handlingCSV = False
+            print("Handling Pickles.")
+        # -------------- EXITING --------------
+        elif (command[0] == "exit" or command[0] == "e"):
+            print("Exiting program...")
+            print("Thank you for using this program!")
+            return True
+        else:
+            raise ValueError("Invalid command entered.")
+        #end
     except ValueError as e:
         logging.error("Invalid command entered")
         print(e)
-
-        #end
     #end
+    return False
+#end
+
 def main():
     command = "initial"
-    while (command != "exit" and command != "e"):
+    exiting = False
+    while (not exiting):
         print()
         command = input.askForInput()
-        enactCommand(command)
+        exiting = enactCommand(command)
     #end
-    
-    #
+#end
 
 #%% MAIN CODE                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Main code start here

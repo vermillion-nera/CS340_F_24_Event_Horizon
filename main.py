@@ -321,6 +321,13 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
     except ValueError as e:
         logging.error("Invalid command entered")
         print(e)
+    except pd.errors.UndefinedVariableError as e:
+        logging.error("Invalid query.")
+        print(e)
+    except SyntaxError as e:
+        logging.error("Syntax error. What in the world happened??")
+        print("Syntax error. What in the world happened??")
+        print(e)
     #end
     return False
 #end

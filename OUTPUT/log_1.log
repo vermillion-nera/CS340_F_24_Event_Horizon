@@ -119,3 +119,7 @@
 2024-11-30 20:45 - INFO - first asdf
 2024-11-30 20:45 - ERROR - Invalid command entered
 2024-11-30 20:45 - INFO - e
+2024-11-30 20:58 - INFO - print
+2024-11-30 20:59 - INFO - & C:/Users/babri/anaconda3/python.exe "c:/Users/babri/OneDrive/Documents/CMPS 3400 Final Project/CS340_F_24_Event_Horizon/pickle_module.py"
+2024-11-30 20:59 - ERROR - Invalid command entered
+2024-11-30 20:59 - INFO - exit

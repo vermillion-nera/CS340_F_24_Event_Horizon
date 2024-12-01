@@ -35,6 +35,10 @@ if __name__ == "__main__":
 #other imports
 from   copy       import deepcopy as dpcpy
 import logging
+import pandas as pd
+import dataframe_module
+from config import csv_path
+
 
 '''
 from   matplotlib import pyplot as plt
@@ -57,6 +61,11 @@ import sys
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+logger = logging.getLogger(__name__)
+
+dataframe = pd.read_csv(csv_path)
+
+
 
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,13 +76,41 @@ import sys
 
 #Class definitions Start Here
 class pickle_manager:
-    def __init__(self):
-        test = True
+    def __init__(self, pickle_File):
+        self.pickle_File = pickle_File
+       
+
         print("Pickle parent initialized.")
     #end
+    def create_Pickle(self, df):
 
+        try:
+            df.to_pickle(self.pickle_File)
+            logging.info("Successfully created pickle file")
+
+        except Exception as e:
+            print(f"Error pickling data: {e}")
+            logging.error("Error pickling data.")
+            
+    def load_Pickle(self):
+        try:
+            df = pd.read_pickle(self.pickle_File)
+            print(f"Loaded dataframe from {self.pickle_File}")
+            return df
+        except Exception as e:
+            print("Error loading pickle as a dataframe from {self.pickle_File}: {e}")
+            logging.error("Error loading pickle as a dataframe from {self.pickle_File}: {e}")
+            
+        
     def printPickle(self):
-        print("printingPickle")
+        df = self.load_Pickle()
+        if df is not None:
+            print(df)
+            logging.info("Printed pickle.")
+        else:
+            print("No data to display from pickle")
+            logging.info("No data to display from pickle")
+        
     #end
 #end
 
@@ -87,6 +124,8 @@ class math_wizard(pickle_manager):
         print("this is supposed to input a pickle")
     #end
 #end
+
+
 
 
 #Function definitions Start Here
@@ -107,4 +146,6 @@ if __name__ == "__main__":
     
     #TEST Code
     main()
-   
+    manager = pickle_manager("pickle_dataframe.pkl")
+    manager.create_Pickle(dataframe)
+    manager.printPickle()

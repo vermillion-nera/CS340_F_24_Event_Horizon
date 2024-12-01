@@ -16,3 +16,24 @@
 2024-11-30 16:00 - INFO - print
 2024-11-30 16:00 - INFO - print columns
 2024-11-30 16:00 - INFO - exit
+2024-11-30 19:52 - INFO - no
+2024-11-30 19:52 - ERROR - Invalid command entered
+2024-11-30 19:52 - INFO - exit
+2024-11-30 19:55 - INFO - exit
+2024-11-30 19:55 - INFO - exit
+2024-11-30 19:55 - INFO - help
+2024-11-30 19:55 - INFO - close
+2024-11-30 19:55 - ERROR - Invalid command entered
+2024-11-30 19:55 - INFO - exit
+2024-11-30 19:56 - INFO - exit
+2024-11-30 19:57 - INFO - exit
+2024-11-30 19:58 - INFO - exit
+2024-11-30 19:58 - INFO - exit
+2024-11-30 19:58 - INFO - command parsing
+2024-11-30 19:58 - INFO - hello?
+2024-11-30 19:58 - INFO - help
+2024-11-30 19:58 - INFO - exit
+2024-11-30 20:01 - INFO - help
+2024-11-30 20:01 - INFO - exit
+2024-11-30 20:01 - INFO - help
+2024-11-30 20:01 - INFO - exit

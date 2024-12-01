@@ -55,10 +55,10 @@ import seaborn as sns
 import logging
 '''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+# TODO: Possibly place user input here
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+# TODO: use "nonlocal" and "private like" somewhere
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -74,23 +74,25 @@ dataframe_manager = dataframe_module.dataframe_manager(dataframe)
 
 
 classPickle = pickle_module.math_wizard()
-commandList = ( # TODO: Put this into a dictionary
-    "help",
-    "print",
-    "print unshaped",
-    "print columns",
-    "print rows",
-    "print query",
-    "filter columns",
-    "filter rows",
-    "filter query",
-    "filter reset",
-    "datatype",
-    "switch",
-    "csv",
-    "pickle",
-    "exit",
-)
+commandDict = { # TODONE: Put this into a dictionary
+    0: "help",
+    1: "print",
+    1.01: "[optional]:",
+    1.02: "unshaped",
+    1.03: "columns",
+    1.04: "rows",
+    1.05: "query",
+    2: "filter",
+    2.01: "columns",
+    2.02: "rows",
+    2.03: "query",
+    2.04: "reset",
+    3: "datatype",
+    4: "switch",
+    5: "csv",
+    6: "pickle",
+    7: "exit",
+}
 
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -108,84 +110,63 @@ handlingCSV = True
 def enactCommand(command): # TODO: Implement try catch statement, and if it catches an error, log it and continue on (not enacting a command shouldn't break ).
     logging.info(command)
     global handlingCSV
-    global commandList
+    global commandDict
+
+    commandArgs = command.split(" ")
     try:
-        
-       
-        # TODO: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
+        # TODONE: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
         # Might be able to do this by split()ing our command into arguments separated by spaces
-        if (command == "help" or command == "commands"):
+        if (len(commandArgs) == 0 or command == ""):
+            print("Please type a command.")
+        elif (commandArgs[0] == "help" or commandArgs[0] == "commands"): # TODONE: Perhaps make help for subcommands?
             print("----------------------")
-            print("Available commands:")
-            for item in commandList:
-                print("> "+item)
+            if (len(commandArgs) > 1):
+                if (commandArgs[1] == "help"):
+                    print("Available 'help' subcommands:")
+                    for key, comm in commandDict.items():
+                        if (key%1 == 0):
+                            print("> "+comm)
+                        #end
+                    #end
+                else:
+                    commandKey = -1
+                    hasSubcommands = False
+                    for key, comm in commandDict.items():
+                        if (comm == commandArgs[1] and key%1 == 0):
+                            commandKey = key
+                        elif ((key - commandKey) > 0 and (key - commandKey) < 1):
+                            if (not hasSubcommands):
+                                print("Available '"+commandArgs[1]+"' subcommands:")
+                            #end
+                            hasSubcommands = True
+                            print("> "+comm)
+                        #end
+                    #end
+                    if (not hasSubcommands):
+                        print("No subcommands for '"+commandArgs[1]+"'.")
+                    #end
+                #end
+            else:
+                print("Available commands:")
+                for key, comm in commandDict.items():
+                    if (key%1 != 0):
+                        print("  > "+comm)
+                    else:
+                        print("> "+comm)
+                    #end
+                #end
+            #end
             print("----------------------")
-        elif (command == "print"):
-            if (handlingCSV):   csv_manager.printDataFrame()
-            else:               classPickle.printPickle()
-        elif (command == "print unshaped" or command == "print original"):
-            if (handlingCSV):   csv_manager.printDataFrameOriginal()
-            else:               classPickle.printPickle()
-        elif (command == "print columns" or command == "print column"):
-            if (handlingCSV):   csv_manager.printColumns(input.askForInput("Columns to print"))
-            else:               print("Unimplemented.")
-        elif (command == "print rows" or command == "print row"):
-            if (handlingCSV):   csv_manager.printRows(input.askForInput("Rows to print"))
-            else:               print("Unimplemented.")
-        elif (command == "print query"):
-            if (handlingCSV):   csv_manager.printQuery(input.askForInput("Query"))
-            else:               print("Unimplemented.")
-        elif (command == "filter columns" or command == "filter column"):
-            if (handlingCSV):
-                answer = input.askForInput("Columns to filter")
-                csv_manager.filterColumns(answer)
-                print("Filtered by '"+answer+"' columns.")
-            else:
-                print("Unimplemented.")
-            #end
-        elif (command == "filter rows" or command == "filter row."):
-            if (handlingCSV):
-                answer = input.askForInput("Rows to filter")
-                csv_manager.filterRows(answer)
-                print("Filtered by '"+answer+"' rows.")
-            else:
-                print("Unimplemented.")
-            #end
-        elif (command == "filter query"):
-            if (handlingCSV):
-                answer = input.askForInput("Query")
-                csv_manager.filterQuery(answer)
-                print("Filtered by '"+answer+"'.")
-            else:
-                print("Unimplemented.")
-            #end
-        elif (command == "filter reset"):
-            if (handlingCSV):
-                csv_manager.resetShape()
-                print("Dataframe filter reset.")
-            else:
-                print("Unimplemented.")
-            #end
-            # TODO: Allow for exporting the filtered table into a CSV/TXT file
-        elif (command == "datatype" or command == "data type" or command == "type"):
-            if (handlingCSV):   print("Handling CSV's.")
-            else:               print("Handling Pickles.")
-        elif (command == "switch"):
-            handlingCSV = not handlingCSV
-            if (handlingCSV):   print("Handling CSV's.")
-            else:               print("Handling Pickles.")
-        elif (command == "csv"):
-            handlingCSV = True
-            print("Handling CSV's.")
-        elif (command == "pickle"):
-            handlingCSV = False
-            print("Handling Pickles.")
+        # -------------- TEST FUNCTIONS --------------
         elif (command == "print histogram" or command == "plot histogram"):
-            if handlingCSV:   #indentation?
+            if handlingCSV:
                 column_name = input.askForInput("Enter column name for histogram/bar chart: ")  
-                dataframe_manager.plotAllColumnsHist(column_name, save=True) 
+                dataframe_manager.plotAllColumnsHist(column_name, save=True)
+            else:
+                print("Unimplemented.")
+            #end
         elif (command == "studyTime vs parentalSupport"):
-            csv_manager.Violin_StudyTimeWeekly_vs_ParentalSupport() #indentation?
+            csv_manager.Violin_StudyTimeWeekly_vs_ParentalSupport()
         elif (command == "GPA vs Gender"):
             csv_manager.Violin_GPA_vs_Gender()
         elif (command == "Absences vs GradeClass"):
@@ -196,14 +177,122 @@ def enactCommand(command): # TODO: Implement try catch statement, and if it catc
             csv_manager.scatter_StudyTimeWeekly_vs_GPA()
         elif (command == "Age vs Absences"):
             csv_manager.scatter_Age_vs_Absences()
-        elif (command == "exit" or command == "e"):
-            print("Exiting program...")
-            print("Thank you for using this program!")
-        else:
-            raise ValueError("Invalid command entered.")
-        #else:
-            #print("'"+command+"' is not a valid command.")
-        #end
+        # -------------- PRINTING --------------
+        elif (commandArgs[0] == "print"):
+            if (len(commandArgs) == 1): # default
+                if (handlingCSV):   csv_manager.printDataFrame()
+                else:               classPickle.printPickle()
+            elif (commandArgs[1] == "unshaped" or commandArgs[1] == "original"):
+                if (handlingCSV):   csv_manager.printDataFrameOriginal()
+                else:               classPickle.printPickle()
+            elif (commandArgs[1] == "columns" or commandArgs[1] == "column"):
+                if (handlingCSV):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Columns to print")
+                    #end
+                    if (answer == "exit"):  print("Skipping print.")
+                    else:                   csv_manager.printColumns(answer)
+                else:
+                    print("Unimplemented.")
+                #end
+            elif (commandArgs[1] == "rows" or commandArgs[1] == "row"):
+                if (handlingCSV):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Rows to print")
+                    #end
+                    if (answer == "exit"):  print("Skipping print.")
+                    else:                   csv_manager.printRows(answer)
+                else:
+                    print("Unimplemented.")
+                #end
+            elif (commandArgs[1] == "query"):
+                if (handlingCSV):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Query")
+                    #end
+                    if (answer == "exit"):  print("Skipping print.")
+                    else:                   csv_manager.printQuery(answer)
+                else:
+                    print("Unimplemented.")
+                #end
+            else:
+                print("'"+command+"' is not a valid print command")
+            #end
+        # -------------- FILTERING --------------
+        elif (commandArgs[0] == "filter"):
+            if (len(commandArgs) == 1):
+                print("'filter' must come with a subcommand. Valid subcommands include:")
+                print("> 'columns'")
+                print("> 'rows'")
+                print("> 'query'")
+                print("> 'reset'")
+            elif (commandArgs[1] == "columns" or commandArgs[1] == "column"):
+                if (handlingCSV):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Columns to filter")
+                    #end
+                    if (answer == "exit"):
+                        print("Skipping filter.")
+                    else:
+                        csv_manager.filterColumns(answer)
+                        print("Filtered by '"+answer+"' columns.")
+                    #end
+                else:
+                    print("Unimplemented.")
+                #end
+            elif (commandArgs[1] == "rows" or commandArgs[1] == "row"):
+                if (handlingCSV):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Rows to filter")
+                    #end
+                    if (answer == "exit"):
+                        print("Skipping filter.")
+                    else:
+                        csv_manager.filterRows(answer)
+                        print("Filtered by '"+answer+"' rows.")
+                    #end
+                else:
+                    print("Unimplemented.")
+                #end
+            elif (commandArgs[1] == "query"):
+                if (handlingCSV):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Query")
+                    #end
+                    if (answer == "exit"):
+                        print("Skipping filter.")
+                    else:
+                        csv_manager.filterQuery(answer)
+                        print("Filtered by '"+answer+"'.")
+                    #end
+                else:
+                    print("Unimplemented.")
+                #end
+            elif (commandArgs[1] == "reset"):
+                if (handlingCSV):
+                    csv_manager.resetShape()
+                    print("Dataframe filter reset.")
+                else:
+                    print("Unimplemented.")
+                #end
     #end
     except ValueError as e:
         logging.error("Invalid command entered")

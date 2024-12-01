@@ -74,3 +74,48 @@
 2024-11-30 20:24 - ERROR - Syntax error. What in the world happened??
 2024-11-30 20:25 - INFO - filter query
 2024-11-30 20:25 - INFO - print
+2024-11-30 20:27 - INFO - print query
+2024-11-30 20:27 - ERROR - Syntax error. What in the world happened??
+2024-11-30 20:27 - INFO - exit
+2024-11-30 20:36 - INFO - pickle
+2024-11-30 20:36 - INFO - print
+2024-11-30 20:36 - ERROR - Invalid command entered
+2024-11-30 20:36 - INFO - first
+2024-11-30 20:36 - INFO - pickle
+2024-11-30 20:36 - INFO - first
+2024-11-30 20:36 - INFO - first first
+2024-11-30 20:36 - INFO - first second
+2024-11-30 20:36 - INFO - second
+2024-11-30 20:36 - INFO - asdf
+2024-11-30 20:36 - ERROR - Invalid command entered
+2024-11-30 20:36 - INFO - asdf
+2024-11-30 20:36 - ERROR - Invalid command entered
+2024-11-30 20:36 - INFO - asdf
+2024-11-30 20:36 - ERROR - Invalid command entered
+2024-11-30 20:36 - INFO - asdf
+2024-11-30 20:36 - ERROR - Invalid command entered
+2024-11-30 20:36 - INFO - switch
+2024-11-30 20:36 - INFO - print
+2024-11-30 20:36 - INFO - switch
+2024-11-30 20:36 - INFO - e
+2024-11-30 20:39 - INFO - help
+2024-11-30 20:39 - INFO - switch
+2024-11-30 20:39 - INFO - help
+2024-11-30 20:39 - INFO - switch
+2024-11-30 20:39 - INFO - help
+2024-11-30 20:39 - INFO - e
+2024-11-30 20:45 - INFO - print asdf
+2024-11-30 20:45 - ERROR - Invalid command entered
+2024-11-30 20:45 - INFO - print e
+2024-11-30 20:45 - ERROR - Invalid command entered
+2024-11-30 20:45 - INFO - exxx
+2024-11-30 20:45 - INFO - print asdf
+2024-11-30 20:45 - ERROR - Invalid command entered
+2024-11-30 20:45 - INFO - print error
+2024-11-30 20:45 - ERROR - Invalid command entered
+2024-11-30 20:45 - INFO - print
+2024-11-30 20:45 - INFO - switch
+2024-11-30 20:45 - INFO - pickle
+2024-11-30 20:45 - INFO - first asdf
+2024-11-30 20:45 - ERROR - Invalid command entered
+2024-11-30 20:45 - INFO - e

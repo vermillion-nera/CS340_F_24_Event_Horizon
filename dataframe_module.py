@@ -194,7 +194,7 @@ class dataframe_manager:
                 plt.show()
     #end
 
-    # TODO: Add an exporting function
+    # TODOING: Add an exporting function
     def export(self):
         pass
     #end
@@ -271,7 +271,7 @@ class csv_manager(dataframe_manager):
         plt.show()
     #end
 
-    # TODO: Add a function to query with binary indexing
+    # TODOING: Add a function to query with binary indexing
     def printBinaryQuery(self):
         pass
     #end

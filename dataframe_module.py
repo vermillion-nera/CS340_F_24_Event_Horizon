@@ -195,6 +195,9 @@ class dataframe_manager:
     #end
 
     # TODO: Add an exporting function
+    def export(self):
+        pass
+    #end
 #end
 
 class csv_manager(dataframe_manager):
@@ -269,6 +272,13 @@ class csv_manager(dataframe_manager):
     #end
 
     # TODO: Add a function to query with binary indexing
+    def printBinaryQuery(self):
+        pass
+    #end
+
+    def filterBinaryQuery(self):
+        pass
+    #end
 #end
 
 #Function definitions Start Here

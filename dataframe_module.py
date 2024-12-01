@@ -193,6 +193,8 @@ class dataframe_manager:
             else:
                 plt.show()
     #end
+
+    # TODO: Add an exporting function
 #end
 
 class csv_manager(dataframe_manager):
@@ -265,6 +267,8 @@ class csv_manager(dataframe_manager):
         plt.ylabel('Absences')
         plt.show()
     #end
+
+    # TODO: Add a function to query with binary indexing
 #end
 
 #Function definitions Start Here

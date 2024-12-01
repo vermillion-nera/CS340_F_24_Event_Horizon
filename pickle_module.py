@@ -102,7 +102,7 @@ class pickle_manager:
             logging.error("Error loading pickle as a dataframe from {self.pickle_File}: {e}")
             
         
-    def printPickle(self):
+    def print_Pickle(self):
         df = self.load_Pickle()
         if df is not None:
             print(df)
@@ -148,4 +148,4 @@ if __name__ == "__main__":
     main()
     manager = pickle_manager("pickle_dataframe.pkl")
     manager.create_Pickle(dataframe)
-    manager.printPickle()
+    manager.print_Pickle()

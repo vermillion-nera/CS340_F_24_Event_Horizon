@@ -116,7 +116,7 @@ handlingCSV = True
 
 #Function definitions Start Here
 
-def enactCommand(command): # TODO: Implement try catch statement, and if it catches an error, log it and continue on (not enacting a command shouldn't break ).
+def enactCommand(command): # TODONE: Implement try catch statement, and if it catches an error, log it and continue on (not enacting a command shouldn't break ).
     logging.info(command)
     global handlingCSV
     global commandDictCSV

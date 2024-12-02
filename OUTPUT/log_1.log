@@ -119,3 +119,48 @@
 2024-11-30 20:45 - INFO - first asdf
 2024-11-30 20:45 - ERROR - Invalid command entered
 2024-11-30 20:45 - INFO - e
+2024-12-01 20:41 - INFO - export\
+2024-12-01 20:41 - INFO - export
+2024-12-01 20:42 - INFO - export
+2024-12-01 20:42 - INFO - export
+2024-12-01 20:43 - INFO - exit
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - exit
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - e
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - asdf
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - export
+2024-12-01 20:43 - INFO - exit
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - exit
+2024-12-01 20:44 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - csv
+2024-12-01 20:44 - INFO - pickle
+2024-12-01 20:44 - INFO - exit
+2024-12-01 20:44 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - eadl
+2024-12-01 20:44 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - e
+2024-12-01 20:44 - INFO - export
+2024-12-01 20:49 - INFO - export
+2024-12-01 20:50 - INFO - filter query Age == 18 & GPA >= 3.75
+2024-12-01 20:50 - INFO - print
+2024-12-01 20:50 - INFO - filter columns StudentID Age Gender StudyTimeWeekly GPA
+2024-12-01 20:50 - INFO - print
+2024-12-01 20:50 - INFO - export
+2024-12-01 20:51 - INFO - export gpa18375
+2024-12-01 20:51 - INFO - export blah blah
+2024-12-01 20:51 - INFO - export 123 fasdf
+2024-12-01 20:51 - INFO - export .as.d.
+2024-12-01 20:51 - INFO - export test.csv
+2024-12-01 20:52 - INFO - export test.png
+2024-12-01 20:52 - INFO - filter reset
+2024-12-01 20:52 - INFO - print
+2024-12-01 20:52 - INFO - exit
+2024-12-01 20:53 - INFO - export
+2024-12-01 20:53 - INFO - export exit
+2024-12-01 20:53 - INFO - exit
+2024-12-01 20:55 - INFO - export test
+2024-12-01 20:58 - INFO - exit

@@ -194,9 +194,9 @@ class dataframe_manager:
                 plt.show()
     #end
 
-    # TODOING: Add an exporting function
-    def export(self):
-        pass
+    # TODONE: Add an exporting function
+    def export(self, filename):
+        self.shaped.to_csv("OUTPUT/"+filename)
     #end
 #end
 
@@ -271,12 +271,12 @@ class csv_manager(dataframe_manager):
         plt.show()
     #end
 
-    # TODOING: Add a function to query with binary indexing
-    def printBinaryQuery(self):
+    # TODOING: Add a function to query with boolean indexing
+    def printBooleanQuery(self, myQuery):
         pass
     #end
 
-    def filterBinaryQuery(self):
+    def filterBooleanQuery(self, myQuery):
         pass
     #end
 #end

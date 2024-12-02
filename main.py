@@ -87,11 +87,12 @@ commandDictCSV = { # TODONE: Put this into a dictionary
     2.02: "rows",
     2.03: "query",
     2.04: "reset",
-    3: "datatype",
-    4: "switch",
-    5: "csv",
-    6: "pickle",
-    7: "exit",
+    3: "export",
+    4: "datatype",
+    5: "switch",
+    6: "csv",
+    7: "pickle",
+    8: "exit",
 }
 commandDictPickle = { # TODOING: Update this as needed
     0: "help",
@@ -187,7 +188,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             handlingCSV = False
             print("Handling Pickles.")
         # -------------- EXITING --------------
-        elif (command[0] == "exit" or command[0] == "e"):
+        elif (commandArgs[0] == "exit" or commandArgs[0] == "e"):
             print("Exiting program...")
             print("Thank you for using this program!")
             return True # This is to indicate we ARE exiting.
@@ -298,8 +299,19 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                 else:
                     raise ValueError("'"+commandArgs[1]+"' is not a valid filter subcommand")
             # -------------- EXPORTING --------------
-            elif (commandArgs[0] == "export"): # TODO: Allow for exporting the filtered table into a CSV/TXT file
-                print("Unimplemented.")
+            elif (commandArgs[0] == "export"): # TODONE: Allow for exporting the filtered table into a CSV/TXT file
+                answer = ""
+                if (len(commandArgs) > 1):
+                    answer = " ".join(commandArgs[1:])
+                else:
+                    answer = input.askForInput("Filename")
+                #end
+                if (answer == "exit"):
+                    print("Skipping export.")
+                else:
+                    csv_manager.export(answer)
+                    print("Exported dataframe to 'OUTPUT/"+answer+"'.")
+                #end
             else:
                 raise ValueError("'"+command+"' is not a valid command.")
         # -------------- PICKLE HANDLING --------------

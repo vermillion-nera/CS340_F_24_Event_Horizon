@@ -170,28 +170,34 @@ class dataframe_manager:
     def printDataFrameOriginal(self):
         print(self.df)
 
-    def plotAllColumnsHist(self,column_name, save=False, bins=10):    
+    def plotAllColumnsHist(self, column_name, save=False, bins=10):
      if column_name in self.df.columns:
+        # Check for numeric columns
         if self.df[column_name].dtype in [np.number, 'float64', 'int64']:
             plt.figure(figsize=(10, 6))
-            plt.hist(self.df[column_name], bins=bins, edgecolor='black')
+            # Line plot for numeric columns
+            plt.plot(self.df[column_name], marker='o', linestyle='-', color='b', alpha=0.7)
+            plt.title(f"Line Plot of {column_name}")
+            plt.xlabel("Index")
+            plt.ylabel(column_name)
+            if save:
+                plt.savefig(f"Plots/{column_name}_line_plot.png")
+            else:
+                plt.show()
+        # Check for categorical columns
+        elif self.df[column_name].dtype in ['object', 'category', 'bool']:
+            plt.figure(figsize=(10, 6))
+            # Histogram for categorical columns
+            self.df[column_name].value_counts().plot(kind='bar', edgecolor='black')
             plt.title(f"Histogram of {column_name}")
             plt.xlabel(column_name)
             plt.ylabel("Frequency")
             if save:
-                plt.savefig(f"Plots/{column_name}_histogram.png")
+                plt.savefig(f"Plots/{column_name}_categorical_histogram.png")
             else:
                 plt.show()
-        elif self.df[column_name].dtype in ['object', 'category', 'bool']:
-            plt.figure(figsize=(10, 6))
-            self.df[column_name].value_counts().plot(kind='bar', edgecolor='black')
-            plt.title(f"Bar Chart of {column_name}")
-            plt.xlabel(column_name)
-            plt.ylabel("Frequency")
-            if save:
-                plt.savefig(f"Plots/{column_name}_bar_chart.png")
-            else:
-                plt.show()
+        else:
+         print(f"Column '{column_name}' not found in the dataframe.")
     #end
 
     # TODONE: Add an exporting function

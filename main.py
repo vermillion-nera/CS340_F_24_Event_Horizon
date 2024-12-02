@@ -243,6 +243,15 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     #end
                     if (answer == "exit"):  print("Skipping print.")
                     else:                   csv_manager.printQuery(answer)
+                elif (commandArgs[1] == "boolquery" or commandArgs[1] == "booleanquery"):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Boolean index query")
+                    #end
+                    if (answer == "exit"):  print("Skipping boolean index query.")
+                    else:                   csv_manager.printBooleanQuery(answer)
                 else:
                     raise ValueError("'"+commandArgs[1]+"' is not a valid print subcommand.")
                 #end
@@ -332,13 +341,20 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             #end
         #end
     except ValueError as e:
-        logging.error("Invalid command entered")
+        logging.error(e)
         print(e)
     except pd.errors.UndefinedVariableError as e:
-        logging.error("Invalid query entered")
+        logging.error(e)
+        print(e)
+    except KeyError as e:
+        logging.error("Invalid key:\t"+str(e))
+        print("Invalid key:\t"+str(e))
+    except TypeError as e:
+        logging.error(e)
         print(e)
     except SyntaxError as e:
         logging.error("Syntax error. What in the world happened??")
+        logging.error(e)
         print("Syntax error. What in the world happened??")
         print(e)
     #end

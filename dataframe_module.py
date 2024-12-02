@@ -271,13 +271,82 @@ class csv_manager(dataframe_manager):
         plt.show()
     #end
 
+    def __parseBooleanQuery(self, myQuery):
+        column = ""
+        operator = ""
+        filter = ""
+        spaceCount = 0
+
+        for letter in myQuery:
+            if (letter == "=" or letter == ">" or letter == "<"):
+                spaceCount = 0
+                operator += letter
+            elif (letter == " "):
+                if (operator != "" or filter == ""):
+                    pass
+                else:
+                    spaceCount += 1
+                #end
+            elif(operator == ""):
+                if (spaceCount > 0):
+                    for i in range(spaceCount):
+                        column += " "
+                    #end
+                else:
+                    column += letter
+                #end
+            else:
+                if (spaceCount > 0):
+                    for i in range(spaceCount):
+                        column += " "
+                    #end
+                else:
+                    filter += letter
+                #end
+            #end
+        #end
+
+        if (column == "" or operator == "" or filter == ""):
+            raise ValueError("'"+myQuery+"' is not a valid boolean index query.")
+        #end
+
+        isNumeric = True
+        for letter in filter:
+            if ((letter != ".") and (not letter.isnumeric())):
+                isNumeric = False
+                break
+            #end
+        #end
+
+        if (isNumeric):
+            filter = float(filter)
+        #end
+
+        mask = None
+        if (operator == "<"):
+            mask = self.shaped[column] < filter
+        elif (operator == "<="):
+            mask = self.shaped[column] <= filter
+        elif (operator == "==" or operator == "="):
+            mask = self.shaped[column] == filter
+        elif (operator == ">="):
+            mask = self.shaped[column] >= filter
+        elif (operator == ">"):
+            mask = self.shaped[column] > filter
+        else:
+            raise ValueError("'"+myQuery+"' is not a valid boolean index query.")
+        #end
+
+        return mask
+    #end
+
     # TODOING: Add a function to query with boolean indexing
     def printBooleanQuery(self, myQuery):
-        pass
+        print(self.shaped[self.__parseBooleanQuery(myQuery)])
     #end
 
     def filterBooleanQuery(self, myQuery):
-        pass
+        self.shaped = self.shaped[self.__parseBooleanQuery(myQuery)]
     #end
 #end
 

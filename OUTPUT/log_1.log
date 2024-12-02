@@ -170,3 +170,60 @@
 2024-12-01 20:59 - ERROR - Invalid command entered
 2024-12-01 20:59 - INFO - export test
 2024-12-01 21:14 - INFO - exit
+2024-12-01 21:22 - INFO - print boolquery
+2024-12-01 21:23 - INFO - e
+2024-12-01 21:23 - INFO - print boolquery
+2024-12-01 21:44 - INFO - e
+2024-12-01 21:45 - INFO - e
+2024-12-01 21:46 - INFO - print boolquery
+2024-12-01 21:46 - INFO - Age==18
+2024-12-01 21:46 - ERROR - Invalid command entered
+2024-12-01 21:46 - INFO - print boolquery
+2024-12-01 21:47 - INFO - e
+2024-12-01 21:51 - INFO - Age == 18
+2024-12-01 21:51 - ERROR - Invalid command entered
+2024-12-01 21:52 - INFO - print boolquery
+2024-12-01 21:52 - ERROR - Invalid command entered
+2024-12-01 21:52 - INFO - print boolquery Age == 18
+2024-12-01 21:52 - ERROR - Invalid command entered
+2024-12-01 21:54 - INFO - e
+2024-12-01 21:54 - INFO - print boolquery Age == 18
+2024-12-01 21:54 - INFO - print boolquery Male === female
+2024-12-01 21:54 - ERROR - Invalid command entered
+2024-12-01 21:54 - INFO - print Male blah
+2024-12-01 21:54 - ERROR - Invalid command entered
+2024-12-01 21:54 - INFO - print boolquery
+2024-12-01 21:54 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - e
+2024-12-01 21:55 - INFO - print boolquery blah
+2024-12-01 21:55 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - print boolquery blahblah
+2024-12-01 21:55 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - print boolquery blahblahasd adsf
+2024-12-01 21:55 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - print boolquery blahblahasd adsffd > d
+2024-12-01 21:57 - INFO - blah > asdf
+2024-12-01 21:57 - ERROR - Invalid command entered
+2024-12-01 21:57 - INFO - print boolquery
+2024-12-01 21:57 - ERROR - Invalid key used
+2024-12-01 21:58 - INFO - e
+2024-12-01 21:58 - INFO - print boolquery age >= 2
+2024-12-01 21:58 - ERROR - Invalid key used
+2024-12-01 21:58 - INFO - print boolquery age >= 2
+2024-12-01 21:58 - ERROR - Invalid key used
+2024-12-01 21:58 - INFO - print boolquery Age >= 2
+2024-12-01 21:58 - INFO - print boolquery Age >= GPA
+2024-12-01 21:59 - INFO - print boolquery Age >= GPA
+2024-12-01 21:59 - ERROR - Comparison made between invalid types
+2024-12-01 22:00 - INFO - e
+2024-12-01 22:00 - INFO - print boolquery Age >= GPA
+2024-12-01 22:00 - ERROR - Invalid comparison between dtype=float64 and str
+2024-12-01 22:00 - INFO - print boolquery Age >= GPA
+2024-12-01 22:00 - ERROR - Invalid comparison between dtype=float64 and str
+2024-12-01 22:00 - INFO - print boolquery Age >= 9
+2024-12-01 22:00 - INFO - print boolquery Gender > 4
+2024-12-01 22:00 - ERROR - '>' not supported between instances of 'str' and 'float'
+2024-12-01 22:00 - INFO - print boolquery Gender > Hello
+2024-12-01 22:01 - INFO - print boolquery Gender > Blah
+2024-12-01 22:01 - INFO - print boolquery Gender < Blah
+2024-12-01 22:01 - INFO - e

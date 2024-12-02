@@ -164,3 +164,8 @@
 2024-12-01 20:53 - INFO - exit
 2024-12-01 20:55 - INFO - export test
 2024-12-01 20:58 - INFO - exit
+2024-12-01 20:58 - INFO - export test.txt
+2024-12-01 20:58 - INFO - export test.zip
+2024-12-01 20:59 - INFO - test
+2024-12-01 20:59 - ERROR - Invalid command entered
+2024-12-01 20:59 - INFO - export test

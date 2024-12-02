@@ -198,8 +198,8 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
         # -------------- CSV HANDLING --------------
         elif (handlingCSV):
             # -------------- TEST FUNCTIONS --------------
-            if (command == "print histogram" or command == "plot histogram"):
-                column_name = input.askForInput("Enter column name for histogram/bar chart: ")  
+            if (command == "print histogram" or command == "plot histogram" or command == "print line plot" or command == "plot line plot"):
+                column_name = input.askForInput("Enter column name for histogram or line chart: ")  
                 dataframe_manager.plotAllColumnsHist(column_name, save=True)
             elif (command == "studyTime vs parentalSupport"):
                 csv_manager.Violin_StudyTimeWeekly_vs_ParentalSupport()

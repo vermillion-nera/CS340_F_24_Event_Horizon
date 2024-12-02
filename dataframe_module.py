@@ -282,7 +282,7 @@ class csv_manager(dataframe_manager):
                 spaceCount = 0
                 operator += letter
             elif (letter == " "):
-                if (operator != "" or filter == ""):
+                if (operator != "" and filter == ""):
                     pass
                 else:
                     spaceCount += 1
@@ -292,17 +292,17 @@ class csv_manager(dataframe_manager):
                     for i in range(spaceCount):
                         column += " "
                     #end
-                else:
-                    column += letter
+                    spaceCount = 0
                 #end
+                column += letter
             else:
                 if (spaceCount > 0):
                     for i in range(spaceCount):
-                        column += " "
+                        filter += " "
                     #end
-                else:
-                    filter += letter
+                    spaceCount = 0
                 #end
+                filter += letter
             #end
         #end
 
@@ -320,6 +320,10 @@ class csv_manager(dataframe_manager):
 
         if (isNumeric):
             filter = float(filter)
+        elif (filter == "False"):
+            filter = False
+        elif (filter == "True"):
+            filter = True
         #end
 
         mask = None
@@ -337,10 +341,14 @@ class csv_manager(dataframe_manager):
             raise ValueError("'"+myQuery+"' is not a valid boolean index query.")
         #end
 
+        print("Column:\t'"+column+"'")
+        print("Operator:\t'"+operator+"'")
+        print("Filter:\t'"+str(filter)+"'")
+
         return mask
     #end
 
-    # TODOING: Add a function to query with boolean indexing
+    # TODONE: Add a function to query with boolean indexing
     def printBooleanQuery(self, myQuery):
         print(self.shaped[self.__parseBooleanQuery(myQuery)])
     #end

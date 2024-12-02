@@ -82,11 +82,13 @@ commandDictCSV = { # TODONE: Put this into a dictionary
     1.03: "columns",
     1.04: "rows",
     1.05: "query",
+    1.06: "boolquery",
     2: "filter",
     2.01: "columns",
     2.02: "rows",
     2.03: "query",
-    2.04: "reset",
+    2.04: "boolquery",
+    2.05: "reset",
     3: "export",
     4: "datatype",
     5: "switch",
@@ -250,7 +252,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     else:
                         answer = input.askForInput("Boolean index query")
                     #end
-                    if (answer == "exit"):  print("Skipping boolean index query.")
+                    if (answer == "exit"):  print("Skipping print.")
                     else:                   csv_manager.printBooleanQuery(answer)
                 else:
                     raise ValueError("'"+commandArgs[1]+"' is not a valid print subcommand.")
@@ -302,6 +304,18 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                         csv_manager.filterQuery(answer)
                         print("Filtered by '"+answer+"'.")
                     #end
+                elif (commandArgs[1] == "boolquery" or commandArgs[1] == "booleanquery"):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Boolean index query")
+                    #end
+                    if (answer == "exit"):
+                        print("Skipping filter.")
+                    else:
+                        csv_manager.filterBooleanQuery(answer)
+                        print("Filtered by '"+answer+"'.")
                 elif (commandArgs[1] == "reset"):
                     csv_manager.resetShape()
                     print("Dataframe filter reset.")

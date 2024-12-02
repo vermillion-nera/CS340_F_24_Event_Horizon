@@ -227,3 +227,72 @@
 2024-12-01 22:01 - INFO - print boolquery Gender > Blah
 2024-12-01 22:01 - INFO - print boolquery Gender < Blah
 2024-12-01 22:01 - INFO - e
+2024-12-01 22:05 - INFO - filter boolquery
+2024-12-01 22:05 - INFO - print
+2024-12-01 22:05 - INFO - Filter Gender          = Male
+2024-12-01 22:05 - ERROR - 'Filter Gender          = Male' is not a valid command.
+2024-12-01 22:05 - INFO - Filter Gender        = Male
+2024-12-01 22:05 - ERROR - 'Filter Gender        = Male' is not a valid command.
+2024-12-01 22:05 - INFO - Filter Gender = Male
+2024-12-01 22:05 - ERROR - 'Filter Gender = Male' is not a valid command.
+2024-12-01 22:05 - INFO - Filter Gender           == Male
+2024-12-01 22:05 - ERROR - 'Filter Gender           == Male' is not a valid command.
+2024-12-01 22:06 - INFO - filter boolquery Gender           == Male
+2024-12-01 22:06 - INFO - print
+2024-12-01 22:06 - INFO - filter boolquery Ethnicity           =       Other
+2024-12-01 22:06 - INFO - pritn
+2024-12-01 22:06 - ERROR - 'pritn' is not a valid command.
+2024-12-01 22:06 - INFO - print
+2024-12-01 22:06 - INFO - filter boolquery test test = blah
+2024-12-01 22:06 - ERROR - Invalid key:	'testtest'
+2024-12-01 22:07 - INFO - e
+2024-12-01 22:07 - INFO - filter boolquery test test = blah
+2024-12-01 22:07 - ERROR - Invalid key:	'testtest'
+2024-12-01 22:08 - INFO - print
+2024-12-01 22:08 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:08 - INFO - print
+2024-12-01 22:09 - INFO - e
+2024-12-01 22:09 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:10 - INFO - e
+2024-12-01 22:10 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:10 - ERROR - Invalid key:	'Parental ducation '
+2024-12-01 22:10 - INFO - filter boolquery ParentalEducation == High School
+2024-12-01 22:10 - ERROR - Invalid key:	'ParentalEducation '
+2024-12-01 22:10 - INFO - filter boolquery Parental ducation == High School
+2024-12-01 22:10 - ERROR - Invalid key:	'Parental ucation '
+2024-12-01 22:11 - INFO - e
+2024-12-01 22:11 - INFO - filter boolquery Parental ducation == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'Parental ducation '
+2024-12-01 22:11 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'Parental Education '
+2024-12-01 22:11 - INFO - filter boolquery ParentalEducation == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'ParentalEducation '
+2024-12-01 22:11 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'Parental Education '
+2024-12-01 22:12 - INFO - filter boolquery Parental Education   == High School
+2024-12-01 22:12 - ERROR - Invalid key:	'Parental Education '
+2024-12-01 22:14 - INFO - e
+2024-12-01 22:14 - INFO - filter boolquery Parental Education   == High School
+2024-12-01 22:14 - ERROR - Invalid key:	'Parental Education'
+2024-12-01 22:14 - INFO - filter boolquery ParentalEducation   == High School
+2024-12-01 22:14 - INFO - print
+2024-12-01 22:14 - INFO - filter boolquery Sports   =  False  
+2024-12-01 22:14 - INFO - print
+2024-12-01 22:14 - INFO - filter reset
+2024-12-01 22:14 - INFO - print
+2024-12-01 22:15 - INFO - print boolquery Sports = False
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:16 - INFO - filter boolquery Sports = True
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:17 - INFO - e
+2024-12-01 22:17 - INFO - print boolquery Sports = True
+2024-12-01 22:17 - ERROR - can only concatenate str (not "bool") to str
+2024-12-01 22:17 - INFO - e
+2024-12-01 22:17 - INFO - print boolquery Sports = True
+2024-12-01 22:18 - INFO - print boolquery Sports    == False
+2024-12-01 22:18 - INFO - e
+2024-12-01 22:19 - INFO - help
+2024-12-01 22:19 - INFO - help filter
+2024-12-01 22:19 - INFO - e

@@ -315,7 +315,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             else:
                 raise ValueError("'"+command+"' is not a valid command.")
         # -------------- PICKLE HANDLING --------------
-        else:
+        else: #TODO: Fill this out with methods for handling pickle files
             if (commandArgs[0] == "first"):
                 if (len(commandArgs) == 1):
                     print("first default pickle")

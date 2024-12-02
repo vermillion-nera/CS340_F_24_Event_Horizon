@@ -341,10 +341,6 @@ class csv_manager(dataframe_manager):
             raise ValueError("'"+myQuery+"' is not a valid boolean index query.")
         #end
 
-        print("Column:\t'"+column+"'")
-        print("Operator:\t'"+operator+"'")
-        print("Filter:\t'"+str(filter)+"'")
-
         return mask
     #end
 

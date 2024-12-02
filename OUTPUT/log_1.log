@@ -300,3 +300,7 @@
 2024-12-01 22:19 - INFO - help
 2024-12-01 22:19 - INFO - help filter
 2024-12-01 22:19 - INFO - e
+2024-12-01 22:26 - INFO - print
+2024-12-01 22:26 - INFO - filter boolquery Age == 18
+2024-12-01 22:27 - INFO - print
+2024-12-01 22:27 - INFO - exit

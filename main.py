@@ -134,6 +134,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
     try:
         # TODONE: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
         # Might be able to do this by split()ing our command into arguments separated by spaces
+        answer = ""
         if (len(commandArgs) == 0 or command == ""):
             print("Please type a command.")
         elif (commandArgs[0] == "help" or commandArgs[0] == "commands"): # TODONE: Perhaps make help for subcommands?
@@ -219,7 +220,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                 elif (commandArgs[1] == "unshaped" or commandArgs[1] == "original"):
                     csv_manager.printDataFrameOriginal()
                 elif (commandArgs[1] == "columns" or commandArgs[1] == "column"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -228,7 +228,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     if (answer == "exit"):  print("Skipping print.")
                     else:                   csv_manager.printColumns(answer)
                 elif (commandArgs[1] == "rows" or commandArgs[1] == "row"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -237,7 +236,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     if (answer == "exit"):  print("Skipping print.")
                     else:                   csv_manager.printRows(answer)
                 elif (commandArgs[1] == "query"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -246,7 +244,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     if (answer == "exit"):  print("Skipping print.")
                     else:                   csv_manager.printQuery(answer)
                 elif (commandArgs[1] == "boolquery" or commandArgs[1] == "booleanquery"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -266,7 +263,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     print("> 'query'")
                     print("> 'reset'")
                 elif (commandArgs[1] == "columns" or commandArgs[1] == "column"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -279,7 +275,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                         print("Filtered by '"+answer+"' columns.")
                     #end
                 elif (commandArgs[1] == "rows" or commandArgs[1] == "row"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -292,7 +287,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                         print("Filtered by '"+answer+"' rows.")
                     #end
                 elif (commandArgs[1] == "query"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -305,7 +299,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                         print("Filtered by '"+answer+"'.")
                     #end
                 elif (commandArgs[1] == "boolquery" or commandArgs[1] == "booleanquery"):
-                    answer = ""
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
@@ -323,7 +316,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     raise ValueError("'"+commandArgs[1]+"' is not a valid filter subcommand")
             # -------------- EXPORTING --------------
             elif (commandArgs[0] == "export"): # TODONE: Allow for exporting the filtered table into a CSV/TXT file
-                answer = ""
                 if (len(commandArgs) > 1):
                     answer = " ".join(commandArgs[1:])
                 else:

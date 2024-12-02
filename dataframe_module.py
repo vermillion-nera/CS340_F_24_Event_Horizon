@@ -194,7 +194,10 @@ class dataframe_manager:
                 plt.show()
     #end
 
-    # TODO: Add an exporting function
+    # TODONE: Add an exporting function
+    def export(self, filename):
+        self.shaped.to_csv("OUTPUT/"+filename)
+    #end
 #end
 
 class csv_manager(dataframe_manager):
@@ -268,7 +271,91 @@ class csv_manager(dataframe_manager):
         plt.show()
     #end
 
-    # TODO: Add a function to query with binary indexing
+    def __parseBooleanQuery(self, myQuery):
+        column = ""
+        operator = ""
+        filter = ""
+        spaceCount = 0
+
+        for letter in myQuery:
+            if (letter == "=" or letter == ">" or letter == "<"):
+                spaceCount = 0
+                operator += letter
+            elif (letter == " "):
+                if (operator != "" and filter == ""):
+                    pass
+                else:
+                    spaceCount += 1
+                #end
+            elif(operator == ""):
+                if (spaceCount > 0):
+                    for i in range(spaceCount):
+                        column += " "
+                    #end
+                    spaceCount = 0
+                #end
+                column += letter
+            else:
+                if (spaceCount > 0):
+                    for i in range(spaceCount):
+                        filter += " "
+                    #end
+                    spaceCount = 0
+                #end
+                filter += letter
+            #end
+        #end
+
+        if (column == "" or operator == "" or filter == ""):
+            raise ValueError("'"+myQuery+"' is not a valid boolean index query.")
+        #end
+
+        isNumeric = True
+        for letter in filter:
+            if ((letter != ".") and (not letter.isnumeric())):
+                isNumeric = False
+                break
+            #end
+        #end
+
+        if (isNumeric):
+            filter = float(filter)
+        elif (filter == "False"):
+            filter = False
+        elif (filter == "True"):
+            filter = True
+        #end
+
+        mask = None
+        if (operator == "<"):
+            mask = self.shaped[column] < filter
+        elif (operator == "<="):
+            mask = self.shaped[column] <= filter
+        elif (operator == "==" or operator == "="):
+            mask = self.shaped[column] == filter
+        elif (operator == ">="):
+            mask = self.shaped[column] >= filter
+        elif (operator == ">"):
+            mask = self.shaped[column] > filter
+        else:
+            raise ValueError("'"+myQuery+"' is not a valid boolean index query.")
+        #end
+
+        print("Column:\t'"+column+"'")
+        print("Operator:\t'"+operator+"'")
+        print("Filter:\t'"+str(filter)+"'")
+
+        return mask
+    #end
+
+    # TODONE: Add a function to query with boolean indexing
+    def printBooleanQuery(self, myQuery):
+        print(self.shaped[self.__parseBooleanQuery(myQuery)])
+    #end
+
+    def filterBooleanQuery(self, myQuery):
+        self.shaped = self.shaped[self.__parseBooleanQuery(myQuery)]
+    #end
 #end
 
 #Function definitions Start Here

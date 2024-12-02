@@ -123,3 +123,180 @@
 2024-11-30 20:59 - INFO - & C:/Users/babri/anaconda3/python.exe "c:/Users/babri/OneDrive/Documents/CMPS 3400 Final Project/CS340_F_24_Event_Horizon/pickle_module.py"
 2024-11-30 20:59 - ERROR - Invalid command entered
 2024-11-30 20:59 - INFO - exit
+2024-12-01 20:41 - INFO - export\
+2024-12-01 20:41 - INFO - export
+2024-12-01 20:42 - INFO - export
+2024-12-01 20:42 - INFO - export
+2024-12-01 20:43 - INFO - exit
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - exit
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - e
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - asdf
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:43 - INFO - export
+2024-12-01 20:43 - INFO - exit
+2024-12-01 20:43 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - exit
+2024-12-01 20:44 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - csv
+2024-12-01 20:44 - INFO - pickle
+2024-12-01 20:44 - INFO - exit
+2024-12-01 20:44 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - eadl
+2024-12-01 20:44 - ERROR - Invalid command entered
+2024-12-01 20:44 - INFO - e
+2024-12-01 20:44 - INFO - export
+2024-12-01 20:49 - INFO - export
+2024-12-01 20:50 - INFO - filter query Age == 18 & GPA >= 3.75
+2024-12-01 20:50 - INFO - print
+2024-12-01 20:50 - INFO - filter columns StudentID Age Gender StudyTimeWeekly GPA
+2024-12-01 20:50 - INFO - print
+2024-12-01 20:50 - INFO - export
+2024-12-01 20:51 - INFO - export gpa18375
+2024-12-01 20:51 - INFO - export blah blah
+2024-12-01 20:51 - INFO - export 123 fasdf
+2024-12-01 20:51 - INFO - export .as.d.
+2024-12-01 20:51 - INFO - export test.csv
+2024-12-01 20:52 - INFO - export test.png
+2024-12-01 20:52 - INFO - filter reset
+2024-12-01 20:52 - INFO - print
+2024-12-01 20:52 - INFO - exit
+2024-12-01 20:53 - INFO - export
+2024-12-01 20:53 - INFO - export exit
+2024-12-01 20:53 - INFO - exit
+2024-12-01 20:55 - INFO - export test
+2024-12-01 20:58 - INFO - exit
+2024-12-01 20:58 - INFO - export test.txt
+2024-12-01 20:58 - INFO - export test.zip
+2024-12-01 20:59 - INFO - test
+2024-12-01 20:59 - ERROR - Invalid command entered
+2024-12-01 20:59 - INFO - export test
+2024-12-01 21:14 - INFO - exit
+2024-12-01 21:22 - INFO - print boolquery
+2024-12-01 21:23 - INFO - e
+2024-12-01 21:23 - INFO - print boolquery
+2024-12-01 21:44 - INFO - e
+2024-12-01 21:45 - INFO - e
+2024-12-01 21:46 - INFO - print boolquery
+2024-12-01 21:46 - INFO - Age==18
+2024-12-01 21:46 - ERROR - Invalid command entered
+2024-12-01 21:46 - INFO - print boolquery
+2024-12-01 21:47 - INFO - e
+2024-12-01 21:51 - INFO - Age == 18
+2024-12-01 21:51 - ERROR - Invalid command entered
+2024-12-01 21:52 - INFO - print boolquery
+2024-12-01 21:52 - ERROR - Invalid command entered
+2024-12-01 21:52 - INFO - print boolquery Age == 18
+2024-12-01 21:52 - ERROR - Invalid command entered
+2024-12-01 21:54 - INFO - e
+2024-12-01 21:54 - INFO - print boolquery Age == 18
+2024-12-01 21:54 - INFO - print boolquery Male === female
+2024-12-01 21:54 - ERROR - Invalid command entered
+2024-12-01 21:54 - INFO - print Male blah
+2024-12-01 21:54 - ERROR - Invalid command entered
+2024-12-01 21:54 - INFO - print boolquery
+2024-12-01 21:54 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - e
+2024-12-01 21:55 - INFO - print boolquery blah
+2024-12-01 21:55 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - print boolquery blahblah
+2024-12-01 21:55 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - print boolquery blahblahasd adsf
+2024-12-01 21:55 - ERROR - Invalid command entered
+2024-12-01 21:55 - INFO - print boolquery blahblahasd adsffd > d
+2024-12-01 21:57 - INFO - blah > asdf
+2024-12-01 21:57 - ERROR - Invalid command entered
+2024-12-01 21:57 - INFO - print boolquery
+2024-12-01 21:57 - ERROR - Invalid key used
+2024-12-01 21:58 - INFO - e
+2024-12-01 21:58 - INFO - print boolquery age >= 2
+2024-12-01 21:58 - ERROR - Invalid key used
+2024-12-01 21:58 - INFO - print boolquery age >= 2
+2024-12-01 21:58 - ERROR - Invalid key used
+2024-12-01 21:58 - INFO - print boolquery Age >= 2
+2024-12-01 21:58 - INFO - print boolquery Age >= GPA
+2024-12-01 21:59 - INFO - print boolquery Age >= GPA
+2024-12-01 21:59 - ERROR - Comparison made between invalid types
+2024-12-01 22:00 - INFO - e
+2024-12-01 22:00 - INFO - print boolquery Age >= GPA
+2024-12-01 22:00 - ERROR - Invalid comparison between dtype=float64 and str
+2024-12-01 22:00 - INFO - print boolquery Age >= GPA
+2024-12-01 22:00 - ERROR - Invalid comparison between dtype=float64 and str
+2024-12-01 22:00 - INFO - print boolquery Age >= 9
+2024-12-01 22:00 - INFO - print boolquery Gender > 4
+2024-12-01 22:00 - ERROR - '>' not supported between instances of 'str' and 'float'
+2024-12-01 22:00 - INFO - print boolquery Gender > Hello
+2024-12-01 22:01 - INFO - print boolquery Gender > Blah
+2024-12-01 22:01 - INFO - print boolquery Gender < Blah
+2024-12-01 22:01 - INFO - e
+2024-12-01 22:05 - INFO - filter boolquery
+2024-12-01 22:05 - INFO - print
+2024-12-01 22:05 - INFO - Filter Gender          = Male
+2024-12-01 22:05 - ERROR - 'Filter Gender          = Male' is not a valid command.
+2024-12-01 22:05 - INFO - Filter Gender        = Male
+2024-12-01 22:05 - ERROR - 'Filter Gender        = Male' is not a valid command.
+2024-12-01 22:05 - INFO - Filter Gender = Male
+2024-12-01 22:05 - ERROR - 'Filter Gender = Male' is not a valid command.
+2024-12-01 22:05 - INFO - Filter Gender           == Male
+2024-12-01 22:05 - ERROR - 'Filter Gender           == Male' is not a valid command.
+2024-12-01 22:06 - INFO - filter boolquery Gender           == Male
+2024-12-01 22:06 - INFO - print
+2024-12-01 22:06 - INFO - filter boolquery Ethnicity           =       Other
+2024-12-01 22:06 - INFO - pritn
+2024-12-01 22:06 - ERROR - 'pritn' is not a valid command.
+2024-12-01 22:06 - INFO - print
+2024-12-01 22:06 - INFO - filter boolquery test test = blah
+2024-12-01 22:06 - ERROR - Invalid key:	'testtest'
+2024-12-01 22:07 - INFO - e
+2024-12-01 22:07 - INFO - filter boolquery test test = blah
+2024-12-01 22:07 - ERROR - Invalid key:	'testtest'
+2024-12-01 22:08 - INFO - print
+2024-12-01 22:08 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:08 - INFO - print
+2024-12-01 22:09 - INFO - e
+2024-12-01 22:09 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:10 - INFO - e
+2024-12-01 22:10 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:10 - ERROR - Invalid key:	'Parental ducation '
+2024-12-01 22:10 - INFO - filter boolquery ParentalEducation == High School
+2024-12-01 22:10 - ERROR - Invalid key:	'ParentalEducation '
+2024-12-01 22:10 - INFO - filter boolquery Parental ducation == High School
+2024-12-01 22:10 - ERROR - Invalid key:	'Parental ucation '
+2024-12-01 22:11 - INFO - e
+2024-12-01 22:11 - INFO - filter boolquery Parental ducation == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'Parental ducation '
+2024-12-01 22:11 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'Parental Education '
+2024-12-01 22:11 - INFO - filter boolquery ParentalEducation == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'ParentalEducation '
+2024-12-01 22:11 - INFO - filter boolquery Parental Education == High School
+2024-12-01 22:11 - ERROR - Invalid key:	'Parental Education '
+2024-12-01 22:12 - INFO - filter boolquery Parental Education   == High School
+2024-12-01 22:12 - ERROR - Invalid key:	'Parental Education '
+2024-12-01 22:14 - INFO - e
+2024-12-01 22:14 - INFO - filter boolquery Parental Education   == High School
+2024-12-01 22:14 - ERROR - Invalid key:	'Parental Education'
+2024-12-01 22:14 - INFO - filter boolquery ParentalEducation   == High School
+2024-12-01 22:14 - INFO - print
+2024-12-01 22:14 - INFO - filter boolquery Sports   =  False  
+2024-12-01 22:14 - INFO - print
+2024-12-01 22:14 - INFO - filter reset
+2024-12-01 22:14 - INFO - print
+2024-12-01 22:15 - INFO - print boolquery Sports = False
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:16 - INFO - filter boolquery Sports = True
+2024-12-01 22:16 - INFO - print
+2024-12-01 22:17 - INFO - e
+2024-12-01 22:17 - INFO - print boolquery Sports = True
+2024-12-01 22:17 - ERROR - can only concatenate str (not "bool") to str
+2024-12-01 22:17 - INFO - e
+2024-12-01 22:17 - INFO - print boolquery Sports = True
+2024-12-01 22:18 - INFO - print boolquery Sports    == False
+2024-12-01 22:18 - INFO - e
+2024-12-01 22:19 - INFO - help
+2024-12-01 22:19 - INFO - help filter
+2024-12-01 22:19 - INFO - e

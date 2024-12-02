@@ -82,16 +82,19 @@ commandDictCSV = { # TODONE: Put this into a dictionary
     1.03: "columns",
     1.04: "rows",
     1.05: "query",
+    1.06: "boolquery",
     2: "filter",
     2.01: "columns",
     2.02: "rows",
     2.03: "query",
-    2.04: "reset",
-    3: "datatype",
-    4: "switch",
-    5: "csv",
-    6: "pickle",
-    7: "exit",
+    2.04: "boolquery",
+    2.05: "reset",
+    3: "export",
+    4: "datatype",
+    5: "switch",
+    6: "csv",
+    7: "pickle",
+    8: "exit",
 }
 commandDictPickle = { # TODOING: Update this as needed
     0: "help",
@@ -187,7 +190,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             handlingCSV = False
             print("Handling Pickles.")
         # -------------- EXITING --------------
-        elif (command[0] == "exit" or command[0] == "e"):
+        elif (commandArgs[0] == "exit" or commandArgs[0] == "e"):
             print("Exiting program...")
             print("Thank you for using this program!")
             return True # This is to indicate we ARE exiting.
@@ -242,6 +245,15 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                     #end
                     if (answer == "exit"):  print("Skipping print.")
                     else:                   csv_manager.printQuery(answer)
+                elif (commandArgs[1] == "boolquery" or commandArgs[1] == "booleanquery"):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Boolean index query")
+                    #end
+                    if (answer == "exit"):  print("Skipping print.")
+                    else:                   csv_manager.printBooleanQuery(answer)
                 else:
                     raise ValueError("'"+commandArgs[1]+"' is not a valid print subcommand.")
                 #end
@@ -292,18 +304,41 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                         csv_manager.filterQuery(answer)
                         print("Filtered by '"+answer+"'.")
                     #end
+                elif (commandArgs[1] == "boolquery" or commandArgs[1] == "booleanquery"):
+                    answer = ""
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Boolean index query")
+                    #end
+                    if (answer == "exit"):
+                        print("Skipping filter.")
+                    else:
+                        csv_manager.filterBooleanQuery(answer)
+                        print("Filtered by '"+answer+"'.")
                 elif (commandArgs[1] == "reset"):
                     csv_manager.resetShape()
                     print("Dataframe filter reset.")
                 else:
                     raise ValueError("'"+commandArgs[1]+"' is not a valid filter subcommand")
             # -------------- EXPORTING --------------
-            elif (commandArgs[0] == "export"): # TODO: Allow for exporting the filtered table into a CSV/TXT file
-                print("Unimplemented.")
+            elif (commandArgs[0] == "export"): # TODONE: Allow for exporting the filtered table into a CSV/TXT file
+                answer = ""
+                if (len(commandArgs) > 1):
+                    answer = " ".join(commandArgs[1:])
+                else:
+                    answer = input.askForInput("Filename")
+                #end
+                if (answer == "exit"):
+                    print("Skipping export.")
+                else:
+                    csv_manager.export(answer)
+                    print("Exported dataframe to 'OUTPUT/"+answer+"'.")
+                #end
             else:
                 raise ValueError("'"+command+"' is not a valid command.")
         # -------------- PICKLE HANDLING --------------
-        else:
+        else: #TODO: Fill this out with methods for handling pickle files
             if (commandArgs[0] == "first"):
                 if (len(commandArgs) == 1):
                     print("first default pickle")
@@ -320,13 +355,20 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             #end
         #end
     except ValueError as e:
-        logging.error("Invalid command entered")
+        logging.error(e)
         print(e)
     except pd.errors.UndefinedVariableError as e:
-        logging.error("Invalid query entered")
+        logging.error(e)
+        print(e)
+    except KeyError as e:
+        logging.error("Invalid key:\t"+str(e))
+        print("Invalid key:\t"+str(e))
+    except TypeError as e:
+        logging.error(e)
         print(e)
     except SyntaxError as e:
         logging.error("Syntax error. What in the world happened??")
+        logging.error(e)
         print("Syntax error. What in the world happened??")
         print(e)
     #end

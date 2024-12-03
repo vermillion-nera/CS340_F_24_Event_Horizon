@@ -304,3 +304,29 @@
 2024-12-01 22:26 - INFO - filter boolquery Age == 18
 2024-12-01 22:27 - INFO - print
 2024-12-01 22:27 - INFO - exit
+2024-12-02 17:37 - INFO - print line plot
+2024-12-02 17:37 - INFO - exit
+2024-12-02 19:35 - INFO - get unique values
+2024-12-02 19:35 - ERROR - 'userInput' object is not callable
+2024-12-02 19:35 - INFO - 0
+2024-12-02 19:35 - ERROR - '0' is not a valid command.
+2024-12-02 19:37 - INFO - get unique values
+2024-12-02 19:37 - ERROR - 'userInput' object is not callable
+2024-12-02 19:40 - INFO - rows
+2024-12-02 19:40 - ERROR - 'rows' is not a valid command.
+2024-12-02 19:40 - INFO - help
+2024-12-02 19:40 - INFO - print
+2024-12-02 19:40 - INFO - rows
+2024-12-02 19:40 - ERROR - 'rows' is not a valid command.
+2024-12-02 19:40 - INFO - print rows
+2024-12-02 19:50 - INFO - get unique values
+2024-12-02 19:51 - INFO - exit
+2024-12-02 19:51 - INFO - get unique values
+2024-12-02 19:53 - INFO - exit
+2024-12-02 19:54 - INFO - generate combinations
+2024-12-02 19:54 - INFO - generate permutations
+2024-12-02 20:03 - INFO - exit
+2024-12-02 20:03 - INFO - generate combinations
+2024-12-02 20:13 - INFO - generate combinations
+2024-12-02 20:13 - INFO - generate combinations
+2024-12-02 20:14 - INFO - generate combinations

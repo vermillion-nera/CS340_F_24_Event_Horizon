@@ -213,40 +213,6 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                 csv_manager.scatter_StudyTimeWeekly_vs_GPA()
             elif (command == "Age vs Absences"):
                 csv_manager.scatter_Age_vs_Absences()
-
-            elif command == "get unique values":
-                 column_name = input.askForInput("Enter column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl") 
-                 wizard.get_unique_values(column_name)
-            elif command == "generate permutations":
-                 column_name = input.askForInput("Enter column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl")
-                 wizard.generate_permutations(column_name)
-            elif command == "generate combinations":
-                 column_name = input.askForInput("Enter column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl")
-                 wizard.generate_combinations(column_name)
-             # -------------- VECTOR FUNCTIONS --------------
-            if command == "display vector":
-                 vector_name = input.askForInput("Enter vector column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl")
-                 wizard.display_vector(vector_name)
-
-            elif command == "export vector":
-                vector_name = input.askForInput("Enter vector column name: ")
-                wizard.inputPickle("pickle_dataframe.pkl")
-                wizard.export_vector(vector_name)
-
-            elif command == "obtain position vector":
-                columns = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z): ")
-                wizard.inputPickle("pickle_dataframe.pkl")
-                wizard.obtain_position_vector(*columns)
-
-            elif command == "obtain unit vector":
-                vector_name = input.askForInput("Enter vector column name: ")
-                wizard.inputPickle("pickle_dataframe.pkl")
-                wizard.obtain_unit_vector(vector_name)
-            # -------------- PRINTING --------------
             elif (commandArgs[0] == "print"):
                 if (len(commandArgs) == 1): # default
                     csv_manager.printDataFrame()
@@ -363,18 +329,42 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             else:
                 raise ValueError("'"+command+"' is not a valid command.")
         # -------------- PICKLE HANDLING --------------
-        else: #TODO: Fill this out with methods for handling pickle files
-            if (commandArgs[0] == "first"):
-                if (len(commandArgs) == 1):
-                    print("first default pickle")
-                elif (commandArgs[1] == "first"):
-                    print("first first pickle")
-                elif (commandArgs[1] == "second"):
-                    print("first second pickle")
-                else:
-                    raise ValueError("'"+commandArgs[1]+"' is not a valid first pickle subcommand.")
-            elif (commandArgs[0] == "second"):
-                print("second pickle")
+        else: #TODOING: Fill this out with methods for handling pickle files
+            # -------------- TEST FUNCTIONS --------------
+            if command == "get unique values":
+                 column_name = input.askForInput("Enter column name: ")
+                 wizard.inputPickle("pickle_dataframe.pkl") 
+                 wizard.get_unique_values(column_name)
+            elif command == "generate permutations":
+                 column_name = input.askForInput("Enter column name: ")
+                 wizard.inputPickle("pickle_dataframe.pkl")
+                 wizard.generate_permutations(column_name)
+            elif command == "generate combinations":
+                 column_name = input.askForInput("Enter column name: ")
+                 wizard.inputPickle("pickle_dataframe.pkl")
+                 wizard.generate_combinations(column_name)
+                 
+             # -------------- VECTOR FUNCTIONS --------------
+            if command == "display vector":
+                 vector_name = input.askForInput("Enter vector column name: ")
+                 wizard.inputPickle("pickle_dataframe.pkl")
+                 wizard.display_vector(vector_name)
+
+            elif command == "export vector":
+                vector_name = input.askForInput("Enter vector column name: ")
+                wizard.inputPickle("pickle_dataframe.pkl")
+                wizard.export_vector(vector_name)
+
+            elif command == "obtain position vector":
+                columns = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z): ")
+                wizard.inputPickle("pickle_dataframe.pkl")
+                wizard.obtain_position_vector(*columns)
+
+            elif command == "obtain unit vector":
+                vector_name = input.askForInput("Enter vector column name: ")
+                wizard.inputPickle("pickle_dataframe.pkl")
+                wizard.obtain_unit_vector(vector_name)
+            # -------------- PRINTING --------------
             else:
                 raise ValueError("'"+command+"' is not a valid command.")
             #end

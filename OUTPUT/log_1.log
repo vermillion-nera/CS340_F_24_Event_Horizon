@@ -330,3 +330,16 @@
 2024-12-02 20:13 - INFO - generate combinations
 2024-12-02 20:13 - INFO - generate combinations
 2024-12-02 20:14 - INFO - generate combinations
+2024-12-02 20:44 - INFO - exit
+2024-12-02 20:45 - INFO - display vector
+2024-12-02 20:45 - ERROR - 'userInput' object is not callable
+2024-12-02 20:45 - INFO - display vector
+2024-12-02 20:45 - ERROR - 'userInput' object is not callable
+2024-12-02 20:45 - INFO - exit
+2024-12-02 20:45 - INFO - display vector
+2024-12-02 20:46 - INFO - export vector
+2024-12-02 20:46 - ERROR - 'userInput' object is not callable
+2024-12-02 20:46 - INFO - obtain position vector
+2024-12-02 20:48 - INFO - exit
+2024-12-02 20:48 - INFO - display vector
+2024-12-02 20:49 - INFO - export vector

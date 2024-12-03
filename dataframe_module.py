@@ -176,12 +176,12 @@ class dataframe_manager:
         if self.df[column_name].dtype in [np.number, 'float64', 'int64']:
             plt.figure(figsize=(10, 6))
             # Line plot for numeric columns
-            plt.plot(self.df[column_name], marker='o', linestyle='-', color='b', alpha=0.7)
+            plt.plot(self.df[column_name], marker='o', linestyle='', color='b', alpha=0.7)
             plt.title(f"Line Plot of {column_name}")
             plt.xlabel("Index")
             plt.ylabel(column_name)
             if save:
-                plt.savefig(f"Plots/{column_name}_line_plot.png")
+                plt.savefig(f"OUTPUT/Plots/{column_name}_line_plot.png")
             else:
                 plt.show()
         # Check for categorical columns
@@ -193,7 +193,7 @@ class dataframe_manager:
             plt.xlabel(column_name)
             plt.ylabel("Frequency")
             if save:
-                plt.savefig(f"Plots/{column_name}_categorical_histogram.png")
+                plt.savefig(f"OUTPUT/Plots/{column_name}_categorical_histogram.png")
             else:
                 plt.show()
         else:

@@ -1,0 +1,5 @@
+Unique values for 'Age':
+17.0
+18.0
+15.0
+16.0

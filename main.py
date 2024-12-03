@@ -71,6 +71,7 @@ csv_manager = dataframe_module.csv_manager(config.csv_path)
 
 dataframe = pd.read_csv(config.csv_path)
 dataframe_manager = dataframe_module.dataframe_manager(dataframe)
+wizard = pickle_module.math_wizard()
 
 
 classPickle = pickle_module.math_wizard()
@@ -213,6 +214,18 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                 csv_manager.scatter_StudyTimeWeekly_vs_GPA()
             elif (command == "Age vs Absences"):
                 csv_manager.scatter_Age_vs_Absences()
+            elif command == "get unique values":
+                 column_name = input.askForInput("Enter column name: ")
+                 wizard.inputPickle("pickle_dataframe.pkl") 
+                 wizard.get_unique_values(column_name)
+            elif command == "generate permutations":
+                 column_name = input.askForInput("Enter column name: ")
+                 wizard.inputPickle("pickle_dataframe.pkl")
+                 wizard.generate_permutations(column_name)
+            elif command == "generate combinations":
+                 column_name = input.askForInput("Enter column name: ")
+                 wizard.inputPickle("pickle_dataframe.pkl")
+                 wizard.generate_combinations(column_name)
             # -------------- PRINTING --------------
             elif (commandArgs[0] == "print"):
                 if (len(commandArgs) == 1): # default

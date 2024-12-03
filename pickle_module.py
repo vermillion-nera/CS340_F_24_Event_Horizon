@@ -34,10 +34,12 @@ if __name__ == "__main__":
 
 #other imports
 from   copy       import deepcopy as dpcpy
+import itertools
 import logging
 import pandas as pd
 import dataframe_module
 from config import csv_path
+import os
 
 
 '''
@@ -116,12 +118,79 @@ class pickle_manager:
 
 class math_wizard(pickle_manager):
     def __init__(self):
-        test = True
-        print("Pickle child initialized.")
+        super().__init__(pickle_File=None)
+        self.df = None
+        self.output_folder = "OUTPUT"  
+        os.makedirs(self.output_folder, exist_ok=True)  
+        print("Math Wizard initialized.")
     #end
 
     def inputPickle(self, pickle):
-        print("this is supposed to input a pickle")
+        self.pickle_File = pickle
+        self.df = self.load_Pickle()
+        if self.df is not None:
+            print("DataFrame loaded into Math Wizard.")
+        else:
+            print("Failed to load DataFrame.")
+    #end
+    
+    #Getting Unique Values
+    def get_unique_values(self, column_name):
+        if self.df is None:
+            print("No DataFrame loaded. Please load a pickle first.")
+            return []
+        
+        if column_name not in self.df.columns:
+            print(f"Column '{column_name}' not found in the DataFrame.")
+            return []
+        
+        unique_values = self.df[column_name].dropna().unique().tolist()
+        output_file = os.path.join(self.output_folder, f"unique_values_{column_name}.txt")
+        
+        with open(output_file, "w") as file:
+            file.write(f"Unique values for '{column_name}':\n")
+            for value in unique_values:
+                file.write(f"{value}\n")
+        
+        print(f"Unique values saved to: {output_file}")
+        return unique_values
+    #end
+    # Generating Permutations
+    def generate_permutations(self, column_name):
+        unique_values = self.get_unique_values(column_name)
+        if not unique_values:
+            return []
+        
+        permutations = list(itertools.permutations(unique_values))
+        output_file = os.path.join(self.output_folder, f"permutations_{column_name}.txt")
+        
+        with open(output_file, "w") as file:
+            file.write(f"Permutations for '{column_name}':\n")
+            for perm in permutations:
+                file.write(f"{perm}\n")
+        
+        print(f"Permutations saved to: {output_file}")
+        return permutations
+    #end
+
+    # Generating Combinations
+    def generate_combinations(self, column_name):
+        unique_values = self.get_unique_values(column_name)
+        if not unique_values:
+            return []
+        
+        output_file = os.path.join(self.output_folder, f"combinations_{column_name}.txt")
+        
+        with open(output_file, "w") as file:
+            file.write(f"Combinations for '{column_name}':\n")
+            for r in range(1, len(unique_values) + 1):
+                combinations = list(itertools.combinations(unique_values, r))
+                file.write(f"Combinations of length {r}:\n")
+                for comb in combinations:
+                    file.write(f"{comb}\n")
+        
+        print(f"Combinations saved to: {output_file}")
+        return combinations
     #end
 #end
 

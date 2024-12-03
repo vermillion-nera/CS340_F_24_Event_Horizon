@@ -343,3 +343,26 @@
 2024-12-02 20:48 - INFO - exit
 2024-12-02 20:48 - INFO - display vector
 2024-12-02 20:49 - INFO - export vector
+2024-12-02 21:06 - INFO - help
+2024-12-02 21:06 - INFO - reset
+2024-12-02 21:06 - ERROR - 'reset' is not a valid command.
+2024-12-02 21:06 - INFO - switch
+2024-12-02 21:06 - INFO - help
+2024-12-02 21:08 - INFO - & C:/Users/chrca/anaconda3/python.exe "c:/Users/chrca/Documents/CMPS 340/CS340_F_24_Event_Horizon/CS340_F_24_Event_Horizon/main.py"
+2024-12-02 21:08 - ERROR - '& C:/Users/chrca/anaconda3/python.exe "c:/Users/chrca/Documents/CMPS 340/CS340_F_24_Event_Horizon/CS340_F_24_Event_Horizon/main.py"' is not a valid command.
+2024-12-02 21:08 - INFO - help
+2024-12-02 21:08 - INFO - help
+2024-12-02 21:08 - INFO - help
+2024-12-02 21:08 - INFO - print
+2024-12-02 21:08 - INFO - help
+2024-12-02 21:08 - INFO - export 
+2024-12-02 21:09 - INFO - help
+2024-12-02 21:09 - INFO - export
+2024-12-02 21:10 - INFO - & C:/Users/chrca/anaconda3/python.exe "c:/Users/chrca/Documents/CMPS 340/CS340_F_24_Event_Horizon/CS340_F_24_Event_Horizon/main.py"
+2024-12-02 21:10 - ERROR - '& C:/Users/chrca/anaconda3/python.exe "c:/Users/chrca/Documents/CMPS 340/CS340_F_24_Event_Horizon/CS340_F_24_Event_Horizon/main.py"' is not a valid command.
+2024-12-02 21:10 - INFO - help
+2024-12-02 21:10 - INFO - visualize
+2024-12-02 21:10 - ERROR - 'visualize' is not a valid command.
+2024-12-02 21:10 - INFO - pickle
+2024-12-02 21:11 - INFO - help
+2024-12-02 21:11 - INFO - exit

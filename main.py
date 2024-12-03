@@ -35,13 +35,13 @@ if __name__ == "__main__":
 #custom imports
 import dataframe_module
 import pickle_module
-import logging
 import config
+import user_input
 
 #other imports
 from   copy       import deepcopy as dpcpy
 import pandas as pd
-import logger
+import logging
 import os
 
 
@@ -64,7 +64,7 @@ import logging
 
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-input = config.userInput()
+input = user_input.userInput()
 logger = logging.getLogger(__name__)
 
 csv_manager = dataframe_module.csv_manager(config.csv_path)
@@ -116,7 +116,6 @@ handlingCSV = True
 
 
 #Class definitions Start Here
-
 
 #Function definitions Start Here
 

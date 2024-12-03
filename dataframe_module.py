@@ -62,6 +62,8 @@ import sys
 
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 logger = logging.getLogger(__name__)
+fig_width = config.fig_width
+fig_height = config.fig_height
 
 #%% DECLARATIONS                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -174,7 +176,7 @@ class dataframe_manager:
      if column_name in self.df.columns:
         # Check for numeric columns
         if self.df[column_name].dtype in [np.number, 'float64', 'int64']:
-            plt.figure(figsize=(10, 6))
+            plt.figure(figsize=(fig_height, fig_width))
             # Line plot for numeric columns
             plt.plot(self.df[column_name], marker='o', linestyle='', color='b', alpha=0.7)
             plt.title(f"Line Plot of {column_name}")
@@ -186,7 +188,7 @@ class dataframe_manager:
                 plt.show()
         # Check for categorical columns
         elif self.df[column_name].dtype in ['object', 'category', 'bool']:
-            plt.figure(figsize=(10, 6))
+            plt.figure(figsize=(fig_height, fig_width))
             # Histogram for categorical columns
             self.df[column_name].value_counts().plot(kind='bar', edgecolor='black')
             plt.title(f"Histogram of {column_name}")
@@ -227,7 +229,7 @@ class csv_manager(dataframe_manager):
 
     ## Violin   
     def Violin_GPA_vs_Gender(self):
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(fig_height, fig_width))
         sns.violinplot(x='Gender', y='GPA', data=self.df)
         plt.title('Violin Plot of GPA by Gender')
         plt.xlabel('Gender')
@@ -235,7 +237,7 @@ class csv_manager(dataframe_manager):
         plt.show()
 
     def Violin_StudyTimeWeekly_vs_ParentalSupport(self):
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(fig_height, fig_width))
         sns.violinplot(x='ParentalSupport', y='StudyTimeWeekly', data=self.df)
         plt.title('Violin Plot of StudyTimeWeekly by ParentalSupport')
         plt.xlabel('Parental Support')
@@ -244,7 +246,7 @@ class csv_manager(dataframe_manager):
 
 ## Box
     def Box_Absences_vs_GradeClass(self):
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(fig_height, fig_width))
         sns.boxplot(x='GradeClass', y='Absences', data=self.df)
         plt.title('Box Plot of Absences by GradeClass')
         plt.xlabel('Grade Class')
@@ -252,7 +254,7 @@ class csv_manager(dataframe_manager):
         plt.show()
 
     def Box_GPA_vs_ParentalEducation(self):
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(fig_height, fig_width))
         sns.boxplot(x='ParentalEducation', y='GPA', data=self.df)
         plt.title('Box Plot of GPA by ParentalEducation')
         plt.xlabel('Parental Education')
@@ -261,7 +263,7 @@ class csv_manager(dataframe_manager):
 
 # Scatter 
     def scatter_StudyTimeWeekly_vs_GPA(self):
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(fig_height, fig_width))
         sns.scatterplot(x='StudyTimeWeekly', y='GPA', data=self.df)
         plt.title('Scatter Plot of StudyTimeWeekly vs. GPA')
         plt.xlabel('Weekly Study Time')
@@ -269,7 +271,7 @@ class csv_manager(dataframe_manager):
         plt.show()
 
     def scatter_Age_vs_Absences(self):
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(fig_height, fig_width))
         sns.scatterplot(x='Age', y='Absences', data=self.df)
         plt.title('Scatter Plot of Age vs. Absences')
         plt.xlabel('Age')

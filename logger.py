@@ -73,7 +73,6 @@ logging.basicConfig(          #sets up root logger
 
 #Class definitions Start Here
 
-
 #Function definitions Start Here
 def main():
     pass

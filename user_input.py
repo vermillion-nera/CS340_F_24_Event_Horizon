@@ -1,48 +1,26 @@
+
 #%% MODULE BEGINS
-module_name = 'config'
-
-'''
-Version: 0.1
-
-Description:
-    WIP class designed to hold functions used
-    across several modules, the most notable
-    being the logger and the user input.
-
-Authors:
-    Christian Bankovic
-    Wren Caillouet
-    Maxwell Benson
-    Brian Britton
-
-Date Created     :  11/20/2024
-Date Last Updated:  11/20/2024
-
-Doc:
-    <***>
-
-Notes:
-    <***>
-'''
+module_name = 'user_input'
 
 #%% IMPORTS                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if __name__ == "__main__":
    import os
    #os.chdir("./../..")
 #
-
 #custom imports
-
 #other imports
-
+from   copy       import deepcopy as dpcpy
+'''
+from   matplotlib import pyplot as plt
+import mne
+import numpy  as np 
+import os
+import pandas as pd
+import seaborn as sns
+'''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-csv_path = "INPUT/Student_performance_data.csv"
-
-fig_width = 10
-fig_height = 6
-
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -52,23 +30,28 @@ fig_height = 6
 
 #Global declarations Start Here
 
-
-
 #Class definitions Start Here
+class userInput:
+    def __init__(self):
+        print("User Input initialized.")
+    #end
 
-
+    def askForInput(self, message="Give input"):
+        return input(message+":\t")
+    #end
+#end
 
 #Function definitions Start Here
+
 def main():
     pass
 #
 
 #%% MAIN CODE                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Main code start here
-
-
-
 #%% SELF-RUN                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #Main Self-run block
 if __name__ == "__main__":
     
@@ -76,4 +59,3 @@ if __name__ == "__main__":
     
     #TEST Code
     main()
-   

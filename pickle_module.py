@@ -30,15 +30,15 @@ if __name__ == "__main__":
 #
 
 #custom imports
-
+import dataframe_module
+from config import csv_path
 
 #other imports
 from   copy       import deepcopy as dpcpy
 import itertools
 import logging
 import pandas as pd
-import dataframe_module
-from config import csv_path
+import numpy as np
 import os
 
 

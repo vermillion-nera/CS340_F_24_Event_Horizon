@@ -34,11 +34,13 @@ if __name__ == "__main__":
 #custom imports
 
 #other imports
+import pandas as pd
 
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 csv_path = "INPUT/Student_performance_data.csv"
+dataframe = pd.read_csv(csv_path)
 
 fig_width = 10
 fig_height = 6

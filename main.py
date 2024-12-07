@@ -36,6 +36,7 @@ if __name__ == "__main__":
 import dataframe_module
 import pickle_module
 import config
+from   config import dataframe
 import user_input
 
 #other imports
@@ -69,12 +70,9 @@ logger = logging.getLogger(__name__)
 
 csv_manager = dataframe_module.csv_manager(config.csv_path)
 
-dataframe = pd.read_csv(config.csv_path)
 dataframe_manager = dataframe_module.dataframe_manager(dataframe)
-wizard = pickle_module.math_wizard()
+wizard = pickle_module.math_wizard("pickle_dataframe.pkl")
 
-
-classPickle = pickle_module.math_wizard()
 commandDictCSV = { # TODONE: Put this into a dictionary
     0: "help",
     1: "print",
@@ -332,37 +330,36 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
         else: #TODOING: Fill this out with methods for handling pickle files
             # -------------- TEST FUNCTIONS --------------
             if command == "get unique values":
-                 column_name = input.askForInput("Enter column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl") 
+                 column_name = input.askForInput("Enter column name")
+                #  wizard.inputPickle("pickle_dataframe.pkl")
                  wizard.get_unique_values(column_name)
             elif command == "generate permutations":
-                 column_name = input.askForInput("Enter column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl")
+                 column_name = input.askForInput("Enter column name")
+                #  wizard.inputPickle("pickle_dataframe.pkl")
                  wizard.generate_permutations(column_name)
             elif command == "generate combinations":
-                 column_name = input.askForInput("Enter column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl")
-                 wizard.generate_combinations(column_name)
-                 
+                 column_name = input.askForInput("Enter column name")
+                #  wizard.inputPickle("pickle_dataframe.pkl")
+                 wizard.generate_combinations(column_name)  
              # -------------- VECTOR FUNCTIONS --------------
-            if command == "display vector":
-                 vector_name = input.askForInput("Enter vector column name: ")
-                 wizard.inputPickle("pickle_dataframe.pkl")
+            elif command == "display vector":
+                 vector_name = input.askForInput("Enter vector column name")
+                #  wizard.inputPickle("pickle_dataframe.pkl")
                  wizard.display_vector(vector_name)
 
             elif command == "export vector":
-                vector_name = input.askForInput("Enter vector column name: ")
-                wizard.inputPickle("pickle_dataframe.pkl")
+                vector_name = input.askForInput("Enter vector column name")
+                # wizard.inputPickle("pickle_dataframe.pkl")
                 wizard.export_vector(vector_name)
 
             elif command == "obtain position vector":
                 columns = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z): ")
-                wizard.inputPickle("pickle_dataframe.pkl")
+                # wizard.inputPickle("pickle_dataframe.pkl")
                 wizard.obtain_position_vector(*columns)
 
             elif command == "obtain unit vector":
                 vector_name = input.askForInput("Enter vector column name: ")
-                wizard.inputPickle("pickle_dataframe.pkl")
+                # wizard.inputPickle("pickle_dataframe.pkl")
                 wizard.obtain_unit_vector(vector_name)
             # -------------- PRINTING --------------
             else:

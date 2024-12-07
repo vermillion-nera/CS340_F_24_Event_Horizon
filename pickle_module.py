@@ -32,6 +32,7 @@ if __name__ == "__main__":
 #custom imports
 import dataframe_module
 from config import csv_path
+from config import dataframe
 
 #other imports
 from   copy       import deepcopy as dpcpy
@@ -65,7 +66,7 @@ import sys
 #%% INITIALIZATIONS             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 logger = logging.getLogger(__name__)
 
-dataframe = pd.read_csv(csv_path)
+
 
 
 
@@ -80,7 +81,7 @@ dataframe = pd.read_csv(csv_path)
 class pickle_manager:
     def __init__(self, pickle_File):
         self.pickle_File = pickle_File
-       
+        self.create_Pickle(dataframe)
 
         print("Pickle parent initialized.")
     #end
@@ -117,9 +118,9 @@ class pickle_manager:
 #end
 
 class math_wizard(pickle_manager):
-    def __init__(self):
-        super().__init__(pickle_File=None)
-        self.df = None
+    def __init__(self, pickle_File):
+        super().__init__(pickle_File)
+        self.df = self.load_Pickle()
         self.output_folder = "OUTPUT"  
         os.makedirs(self.output_folder, exist_ok=True)  
         print("Math Wizard initialized.")

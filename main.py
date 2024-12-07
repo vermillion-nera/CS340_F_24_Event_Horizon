@@ -359,14 +359,16 @@ def enactCommand(command):
                     else:
                         answer = input.askForInput("Enter column name")
                     #end
-                    wizard.generate_permutations(answer)
+                    if (answer == "exit"):  print("Skipping generating permutations.")
+                    else:                   wizard.generate_permutations(answer)
                 elif (commandArgs[1] == "combinations"):
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
                         answer = input.askForInput("Enter column name")
                     #end
-                    wizard.generate_combinations(answer)  
+                    if (answer == "exit"):  print("Skipping generating combinations.")
+                    else:                   wizard.generate_combinations(answer)  
                 else:
                     raise ValueError("'"+commandArgs[1]+"' is not a valid generate subcommand")
                 #end
@@ -385,14 +387,16 @@ def enactCommand(command):
                     else:
                         answer = input.askForInput("Enter vector column name")
                     #end
-                    wizard.display_vector(answer)
+                    if (answer == "exit"):  print("Skipping displaying vector.")
+                    else:                   wizard.display_vector(answer)
                 elif (commandArgs[1] == "export"):
                     if (len(commandArgs) > 2):
                         answer = " ".join(commandArgs[2:])
                     else:
                         answer = input.askForInput("Enter vector column name")
                     #end
-                    wizard.export_vector(answer)
+                    if (answer == "exit"):  print("Skipping exporting vector.")
+                    else:                   wizard.export_vector(answer)
                 elif (commandArgs[1] == "obtain"):
                     if (len(commandArgs) == 2):
                         print("'vector obtain' must come with a subcommand. Valid subcommands include:")
@@ -404,14 +408,16 @@ def enactCommand(command):
                         else:
                             answer = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z)")
                         #end
-                        wizard.obtain_position_vector(*answer)
+                        if (answer == "exit"):  print("Skipping obtaining position vector.")
+                        else:                   wizard.obtain_position_vector(*answer)
                     elif (commandArgs[2] == "unit"):
                         if (len(commandArgs) > 3):
                             answer = " ".join(commandArgs[3:])
                         else:
                             answer = input.askForInput("Enter vector column name")
                         #end
-                        wizard.obtain_unit_vector(answer)
+                        if (answer == "exit"):  print("Skipping obtaining unit vector.")
+                        else:                   wizard.obtain_unit_vector(answer)
                     else:
                         raise ValueError("'"+commandArgs[2]+"' is not a valid vector obtain subcommand")
                     #end

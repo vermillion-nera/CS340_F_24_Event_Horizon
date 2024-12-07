@@ -5,7 +5,8 @@ module_name = "pickle_module"
 Version: 0.1
 
 Description:
-    WIP class meant to handle Pickle files.
+    Class meant to handle Pickle files and
+    vector math.
 
 Authors:
     Christian Bankovic
@@ -14,7 +15,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  11/20/2024
+Date Last Updated:  12/06/2024
 
 Doc:
     <***>

@@ -5,9 +5,10 @@ module_name = 'config'
 Version: 0.1
 
 Description:
-    WIP class designed to hold functions used
-    across several modules, the most notable
-    being the logger and the user input.
+    Class designed to hold functions and
+    constants used across several modules,
+    the most notable being the logger and
+    the user input.
 
 Authors:
     Christian Bankovic
@@ -16,7 +17,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  11/20/2024
+Date Last Updated:  12/06/2024
 
 Doc:
     <***>

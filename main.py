@@ -97,7 +97,15 @@ commandDictCSV = { # TODONE: Put this into a dictionary
 }
 commandDictPickle = { # TODOING: Update this as needed
     0: "help",
-    # pickle commands go here
+    1: "generate",
+    1.1: "permutations",
+    1.2: "combinations",
+    2: "vector",
+    2.1: "display",
+    2.2: "export",
+    2.3: "obtain",
+    2.31: "positon",
+    2.32: "unit",
     3: "datatype",
     4: "switch",
     5: "csv",
@@ -211,6 +219,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                 csv_manager.scatter_StudyTimeWeekly_vs_GPA()
             elif (command == "Age vs Absences"):
                 csv_manager.scatter_Age_vs_Absences()
+            # -------------- PRINTING --------------
             elif (commandArgs[0] == "print"):
                 if (len(commandArgs) == 1): # default
                     csv_manager.printDataFrame()
@@ -332,29 +341,76 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             if command == "get unique values":
                  column_name = input.askForInput("Enter column name")
                  wizard.get_unique_values(column_name)
-            elif command == "generate permutations":
-                 column_name = input.askForInput("Enter column name")
-                 wizard.generate_permutations(column_name)
-            elif command == "generate combinations":
-                 column_name = input.askForInput("Enter column name")
-                 wizard.generate_combinations(column_name)  
-             # -------------- VECTOR FUNCTIONS --------------
-            elif command == "display vector":
-                 vector_name = input.askForInput("Enter vector column name")
-                 wizard.display_vector(vector_name)
-
-            elif command == "export vector":
-                vector_name = input.askForInput("Enter vector column name")
-                wizard.export_vector(vector_name)
-
-            elif command == "obtain position vector":
-                columns = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z): ")
-                wizard.obtain_position_vector(*columns)
-
-            elif command == "obtain unit vector":
-                vector_name = input.askForInput("Enter vector column name: ")
-                wizard.obtain_unit_vector(vector_name)
-            # -------------- PRINTING --------------
+            elif (commandArgs[0] == "generate"):
+                if (len(commandArgs) == 1):
+                    print("'generate' must come with a subcommand. Valid subcommands include:")
+                    print("> 'permutations'")
+                    print("> 'combinations'")
+                elif (commandArgs[1] == "permutations"):
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Enter column name")
+                    #end
+                    wizard.generate_permutations(answer)
+                elif (commandArgs[1] == "combinations"):
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Enter column name")
+                    #end
+                    wizard.generate_combinations(answer)  
+                else:
+                    raise ValueError("'"+commandArgs[1]+"' is not a valid generate subcommand")
+                #end
+            # -------------- VECTOR FUNCTIONS --------------
+            elif (commandArgs[0] == "vector"):
+                if (len(commandArgs) == 1):
+                    print("'vector' must come with a subcommand. Valid subcommands include:")
+                    print("> 'display'")
+                    print("> 'export'")
+                    print("> 'obtain'")
+                    print("  > 'position'")
+                    print("  > 'unit'")
+                elif (commandArgs[1] == "display"):
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Enter vector column name")
+                    #end
+                    wizard.display_vector(answer)
+                elif (commandArgs[1] == "export"):
+                    if (len(commandArgs) > 2):
+                        answer = " ".join(commandArgs[2:])
+                    else:
+                        answer = input.askForInput("Enter vector column name")
+                    #end
+                    wizard.export_vector(answer)
+                elif (commandArgs[1] == "obtain"):
+                    if (len(commandArgs) == 2):
+                        print("'vector obtain' must come with a subcommand. Valid subcommands include:")
+                        print("> 'position'")
+                        print("> 'unit'")
+                    elif (commandArgs[2] == "position"):
+                        if (len(commandArgs) > 3):
+                            answer = " ".join(commandArgs[3:])
+                        else:
+                            answer = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z)")
+                        #end
+                        wizard.obtain_position_vector(*answer)
+                    elif (commandArgs[2] == "unit"):
+                        if (len(commandArgs) > 3):
+                            answer = " ".join(commandArgs[3:])
+                        else:
+                            answer = input.askForInput("Enter vector column name")
+                        #end
+                        wizard.obtain_unit_vector(answer)
+                    else:
+                        raise ValueError("'"+commandArgs[2]+"' is not a valid vector obtain subcommand")
+                    #end
+                else:
+                    raise ValueError("'"+commandArgs[1]+"' is not a valid vector subcommand")
+                #end
             else:
                 raise ValueError("'"+command+"' is not a valid command.")
             #end

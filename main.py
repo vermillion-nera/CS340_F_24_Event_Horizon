@@ -331,35 +331,28 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             # -------------- TEST FUNCTIONS --------------
             if command == "get unique values":
                  column_name = input.askForInput("Enter column name")
-                #  wizard.inputPickle("pickle_dataframe.pkl")
                  wizard.get_unique_values(column_name)
             elif command == "generate permutations":
                  column_name = input.askForInput("Enter column name")
-                #  wizard.inputPickle("pickle_dataframe.pkl")
                  wizard.generate_permutations(column_name)
             elif command == "generate combinations":
                  column_name = input.askForInput("Enter column name")
-                #  wizard.inputPickle("pickle_dataframe.pkl")
                  wizard.generate_combinations(column_name)  
              # -------------- VECTOR FUNCTIONS --------------
             elif command == "display vector":
                  vector_name = input.askForInput("Enter vector column name")
-                #  wizard.inputPickle("pickle_dataframe.pkl")
                  wizard.display_vector(vector_name)
 
             elif command == "export vector":
                 vector_name = input.askForInput("Enter vector column name")
-                # wizard.inputPickle("pickle_dataframe.pkl")
                 wizard.export_vector(vector_name)
 
             elif command == "obtain position vector":
                 columns = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z): ")
-                # wizard.inputPickle("pickle_dataframe.pkl")
                 wizard.obtain_position_vector(*columns)
 
             elif command == "obtain unit vector":
                 vector_name = input.askForInput("Enter vector column name: ")
-                # wizard.inputPickle("pickle_dataframe.pkl")
                 wizard.obtain_unit_vector(vector_name)
             # -------------- PRINTING --------------
             else:

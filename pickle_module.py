@@ -2,7 +2,7 @@
 module_name = "pickle_module"
 
 '''
-Version: 0.1
+Version: 1.0
 
 Description:
     Class meant to handle Pickle files and

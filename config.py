@@ -2,7 +2,7 @@
 module_name = 'config'
 
 '''
-Version: 0.1
+Version: 1.0
 
 Description:
     Class designed to hold functions and

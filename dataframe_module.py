@@ -202,7 +202,6 @@ class dataframe_manager:
          print(f"Column '{column_name}' not found in the dataframe.")
     #end
 
-    # TODONE: Add an exporting function
     def export(self, filename):
         self.shaped.to_csv("OUTPUT/"+filename)
     #end
@@ -352,7 +351,6 @@ class csv_manager(dataframe_manager):
         return mask
     #end
 
-    # TODONE: Add a function to query with boolean indexing
     def printBooleanQuery(self, myQuery):
         print(self.shaped[self.__parseBooleanQuery(myQuery)])
     #end

@@ -56,10 +56,8 @@ import seaborn as sns
 import logging
 '''
 #%% USER INTERFACE              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# TODO: Possibly place user input here
 
 #%% CONSTANTS                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# TODO: use "nonlocal" and "private like" somewhere
 
 #%% CONFIGURATION               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -73,7 +71,7 @@ csv_manager = dataframe_module.csv_manager(config.csv_path)
 dataframe_manager = dataframe_module.dataframe_manager(dataframe)
 wizard = pickle_module.math_wizard("pickle_dataframe.pkl")
 
-commandDictCSV = { # TODONE: Put this into a dictionary
+commandDictCSV = {
     000: "help",
     100: "print",
     110: "[optional]:",
@@ -95,7 +93,7 @@ commandDictCSV = { # TODONE: Put this into a dictionary
     700: "pickle",
     800: "exit",
 }
-commandDictPickle = { # TODOING: Update this as needed
+commandDictPickle = {
     000: "help",
     100: "generate",
     110: "permutations",
@@ -125,7 +123,7 @@ handlingCSV = True
 
 #Function definitions Start Here
 
-def enactCommand(command): # TODONE: Implement try catch statement, and if it catches an error, log it and continue on (not enacting a command shouldn't break ).
+def enactCommand(command):
     logging.info(command)
     global handlingCSV
     global commandDictCSV
@@ -138,12 +136,10 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
 
     commandArgs = command.split(" ")
     try:
-        # TODONE: Implement "subcommands" of nested if statements. For instance, if (print), if (unshaped), elif (columns), etc
-        # Might be able to do this by split()ing our command into arguments separated by spaces
         answer = ""
         if (len(commandArgs) == 0 or command == ""):
             print("Please type a command.")
-        elif (commandArgs[0] == "help" or commandArgs[0] == "commands"): # TODONE: Perhaps make help for subcommands?
+        elif (commandArgs[0] == "help" or commandArgs[0] == "commands"):
             print("----------------------")
             if (len(commandArgs) > 1):
                 if (commandArgs[1] == "help"):
@@ -332,7 +328,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                 else:
                     raise ValueError("'"+commandArgs[1]+"' is not a valid filter subcommand")
             # -------------- EXPORTING --------------
-            elif (commandArgs[0] == "export"): # TODONE: Allow for exporting the filtered table into a CSV/TXT file
+            elif (commandArgs[0] == "export"):
                 if (len(commandArgs) > 1):
                     answer = " ".join(commandArgs[1:])
                 else:
@@ -347,7 +343,7 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             else:
                 raise ValueError("'"+command+"' is not a valid command.")
         # -------------- PICKLE HANDLING --------------
-        else: #TODOING: Fill this out with methods for handling pickle files
+        else:
             # -------------- TEST FUNCTIONS --------------
             if command == "get unique values":
                  column_name = input.askForInput("Enter column name")

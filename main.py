@@ -74,43 +74,43 @@ dataframe_manager = dataframe_module.dataframe_manager(dataframe)
 wizard = pickle_module.math_wizard("pickle_dataframe.pkl")
 
 commandDictCSV = { # TODONE: Put this into a dictionary
-    0: "help",
-    1: "print",
-    1.01: "[optional]:",
-    1.02: "unshaped",
-    1.03: "columns",
-    1.04: "rows",
-    1.05: "query",
-    1.06: "boolquery",
-    2: "filter",
-    2.01: "columns",
-    2.02: "rows",
-    2.03: "query",
-    2.04: "boolquery",
-    2.05: "reset",
-    3: "export",
-    4: "datatype",
-    5: "switch",
-    6: "csv",
-    7: "pickle",
-    8: "exit",
+    000: "help",
+    100: "print",
+    110: "[optional]:",
+    120: "unshaped",
+    130: "columns",
+    140: "rows",
+    150: "query",
+    160: "boolquery",
+    200: "filter",
+    210: "columns",
+    220: "rows",
+    230: "query",
+    240: "boolquery",
+    250: "reset",
+    300: "export",
+    400: "datatype",
+    500: "switch",
+    600: "csv",
+    700: "pickle",
+    800: "exit",
 }
 commandDictPickle = { # TODOING: Update this as needed
-    0: "help",
-    1: "generate",
-    1.1: "permutations",
-    1.2: "combinations",
-    2: "vector",
-    2.1: "display",
-    2.2: "export",
-    2.3: "obtain",
-    2.31: "positon",
-    2.32: "unit",
-    3: "datatype",
-    4: "switch",
-    5: "csv",
-    6: "pickle",
-    7: "exit",
+    000: "help",
+    100: "generate",
+    110: "permutations",
+    120: "combinations",
+    200: "vector",
+    210: "display",
+    220: "export",
+    230: "obtain",
+    231: "positon",
+    232: "unit",
+    300: "datatype",
+    400: "switch",
+    500: "csv",
+    600: "pickle",
+    700: "exit",
 }
 
 
@@ -149,22 +149,35 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
                 if (commandArgs[1] == "help"):
                     print("Available 'help' subcommands:")
                     for key, comm in currentHelpDict.items():
-                        if (key%1 == 0):
+                        if (key%100 == 0):
                             print("> "+comm)
+                        elif (key%10 == 0):
+                            print("  > "+comm)
                         #end
                     #end
                 else:
                     commandKey = -1
                     hasSubcommands = False
                     for key, comm in currentHelpDict.items():
-                        if (comm == commandArgs[1] and key%1 == 0):
+                        if (comm == commandArgs[1] and key%100 == 0):
                             commandKey = key
-                        elif ((key - commandKey) > 0 and (key - commandKey) < 1):
+                        elif ((key - commandKey) > 0 and (key - commandKey) < 100):
                             if (not hasSubcommands):
                                 print("Available '"+commandArgs[1]+"' subcommands:")
                             #end
                             hasSubcommands = True
-                            print("> "+comm)
+                            if (comm != "help"):
+                                if    (key%10 == 0):    print("> "+comm)
+                                else:                   print("  > "+comm)
+                            #end
+                        elif ((key - commandKey) > 0 and (key - commandKey) < 10):
+                            if (not hasSubcommands):
+                                print("Available '"+commandArgs[1]+"' subcommands:")
+                            #end
+                            hasSubcommands = True
+                            if (comm != "help"):
+                                print("> "+comm)
+                            #end
                         #end
                     #end
                     if (not hasSubcommands):
@@ -174,11 +187,9 @@ def enactCommand(command): # TODONE: Implement try catch statement, and if it ca
             else:
                 print("Available commands:")
                 for key, comm in currentHelpDict.items():
-                    if (key%1 != 0):
-                        print("  > "+comm)
-                    else:
-                        print("> "+comm)
-                    #end
+                    if      (key%100 == 0): print("> "+comm)
+                    elif    (key%10 == 0):  print("  > "+comm)
+                    else:                   print("    > "+comm)
                 #end
             #end
             print("----------------------")

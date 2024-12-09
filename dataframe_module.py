@@ -83,6 +83,9 @@ class dataframe_manager:
         return self.df
     #end
 
+    def arrayToDataFrame(self, array):
+        self.df = pd.DataFrame(np.array(array))
+
     def printColumns(self, colNames): # Inputs a string (i.e. "Age GPA")
         print(self.df[colNames.split(" ")])
     #end

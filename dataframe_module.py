@@ -85,6 +85,7 @@ class dataframe_manager:
 
     def arrayToDataFrame(self, array):
         self.df = pd.DataFrame(np.array(array))
+    #end
 
     def printColumns(self, colNames): # Inputs a string (i.e. "Age GPA")
         print(self.df[colNames.split(" ")])
@@ -174,6 +175,7 @@ class dataframe_manager:
 
     def printDataFrameOriginal(self):
         print(self.df)
+    #end
 
     def plotAllColumnsHist(self, column_name, save=False, bins=10):
      if column_name in self.df.columns:
@@ -228,6 +230,7 @@ class csv_manager(dataframe_manager):
 
     def generateDataFrame(self):
         self.df = pd.read_csv(self.filepath)
+    #end
 
     ## Violin   
     def Violin_GPA_vs_Gender(self):
@@ -237,6 +240,7 @@ class csv_manager(dataframe_manager):
         plt.xlabel('Gender')
         plt.ylabel('GPA')
         plt.show()
+    #end
 
     def Violin_StudyTimeWeekly_vs_ParentalSupport(self):
         plt.figure(figsize=(fig_height, fig_width))
@@ -245,8 +249,9 @@ class csv_manager(dataframe_manager):
         plt.xlabel('Parental Support')
         plt.ylabel('Weekly Study Time')
         plt.show()
+    #end
 
-## Box
+    ## Box
     def Box_Absences_vs_GradeClass(self):
         plt.figure(figsize=(fig_height, fig_width))
         sns.boxplot(x='GradeClass', y='Absences', data=self.df)
@@ -254,6 +259,7 @@ class csv_manager(dataframe_manager):
         plt.xlabel('Grade Class')
         plt.ylabel('Absences')
         plt.show()
+    #end
 
     def Box_GPA_vs_ParentalEducation(self):
         plt.figure(figsize=(fig_height, fig_width))
@@ -262,8 +268,9 @@ class csv_manager(dataframe_manager):
         plt.xlabel('Parental Education')
         plt.ylabel('GPA')
         plt.show()
+    #end
 
-# Scatter 
+    # Scatter 
     def scatter_StudyTimeWeekly_vs_GPA(self):
         plt.figure(figsize=(fig_height, fig_width))
         sns.scatterplot(x='StudyTimeWeekly', y='GPA', data=self.df)
@@ -271,6 +278,7 @@ class csv_manager(dataframe_manager):
         plt.xlabel('Weekly Study Time')
         plt.ylabel('GPA')
         plt.show()
+    #end
 
     def scatter_Age_vs_Absences(self):
         plt.figure(figsize=(fig_height, fig_width))

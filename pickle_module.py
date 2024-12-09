@@ -95,6 +95,8 @@ class pickle_manager:
         except Exception as e:
             print(f"Error pickling data: {e}")
             logging.error("Error pickling data.")
+        #end
+    #end
             
     def load_Pickle(self):
         try:
@@ -104,6 +106,8 @@ class pickle_manager:
         except Exception as e:
             print("Error loading pickle as a dataframe from {self.pickle_File}: {e}")
             logging.error("Error loading pickle as a dataframe from {self.pickle_File}: {e}")
+        #end
+    #end
             
         
     def print_Pickle(self):
@@ -114,7 +118,7 @@ class pickle_manager:
         else:
             print("No data to display from pickle")
             logging.info("No data to display from pickle")
-        
+        #end
     #end
 #end
 
@@ -141,10 +145,12 @@ class math_wizard(pickle_manager):
         if self.df is None:
             print("No DataFrame loaded. Please load a pickle first.")
             return []
+        #end
         
         if column_name not in self.df.columns:
             print(f"Column '{column_name}' not found in the DataFrame.")
             return []
+        #end
         
         unique_values = self.df[column_name].dropna().unique().tolist()
         output_file = os.path.join(self.output_folder, f"unique_values_{column_name}.txt")
@@ -153,15 +159,19 @@ class math_wizard(pickle_manager):
             file.write(f"Unique values for '{column_name}':\n")
             for value in unique_values:
                 file.write(f"{value}\n")
+            #end
+        #end
         
         print(f"Unique values saved to: {output_file}")
         return unique_values
     #end
+
     # Generating Permutations
     def generate_permutations(self, column_name):
         unique_values = self.get_unique_values(column_name)
         if not unique_values:
             return []
+        #end
         
         permutations = list(itertools.permutations(unique_values))
         output_file = os.path.join(self.output_folder, f"permutations_{column_name}.txt")
@@ -170,6 +180,8 @@ class math_wizard(pickle_manager):
             file.write(f"Permutations for '{column_name}':\n")
             for perm in permutations:
                 file.write(f"{perm}\n")
+            #end
+        #end
         
         print(f"Permutations saved to: {output_file}")
         return permutations
@@ -180,6 +192,7 @@ class math_wizard(pickle_manager):
         unique_values = self.get_unique_values(column_name)
         if not unique_values:
             return []
+        #end
         
         output_file = os.path.join(self.output_folder, f"combinations_{column_name}.txt")
         
@@ -190,6 +203,9 @@ class math_wizard(pickle_manager):
                 file.write(f"Combinations of length {r}:\n")
                 for comb in combinations:
                     file.write(f"{comb}\n")
+                #end
+            #end
+        #end
         
         print(f"Combinations saved to: {output_file}")
         return combinations
@@ -202,6 +218,7 @@ class math_wizard(pickle_manager):
         if vector_name not in self.df.columns:
             print(f"Vector '{vector_name}' not found in the DataFrame.")
             return
+        #end
 
         vector = self.df[vector_name].dropna().tolist()
         print(f"Vector '{vector_name}': {vector}")
@@ -213,12 +230,14 @@ class math_wizard(pickle_manager):
         if vector_name not in self.df.columns:
             print(f"Vector '{vector_name}' not found in the DataFrame.")
             return
+        #end
 
         vector = self.df[vector_name].dropna().tolist()
 
         # Define the output file name, defaulting to vector_name_vector.txt
         if file_name is None:
             file_name = f"{vector_name}_vector.txt"
+        #end
         
         output_file = os.path.join(self.output_folder, file_name)
         
@@ -226,6 +245,8 @@ class math_wizard(pickle_manager):
             file.write(f"Vector '{vector_name}':\n")
             for value in vector:
                 file.write(f"{value}\n")
+            #end
+        #end
 
         print(f"Vector '{vector_name}' exported to: {output_file}")
         return output_file
@@ -236,11 +257,14 @@ class math_wizard(pickle_manager):
         if len(columns) != 3:
             print("Position vector requires exactly 3 columns")
             return
+        #end
 
         for col in columns:
             if col not in self.df.columns:
                 print(f"Column '{col}' not found in the DataFrame.")
                 return
+            #end
+        #end
 
         # Extract the position vector
         position_vector = self.df[list(columns)].dropna().values.tolist()
@@ -252,6 +276,8 @@ class math_wizard(pickle_manager):
             file.write(f"Position vector ({columns}):\n")
             for value in position_vector:
                 file.write(f"{value}\n")
+            #end
+        #end
         
         print(f"Position vector saved to: {position_vector_file}")
         return position_vector
@@ -262,6 +288,7 @@ class math_wizard(pickle_manager):
         if vector_name not in self.df.columns:
             print(f"Vector '{vector_name}' not found in the DataFrame.")
             return
+        #end
 
         vector = self.df[vector_name].dropna().tolist()
 
@@ -271,8 +298,8 @@ class math_wizard(pickle_manager):
         if magnitude == 0:
             print(f"Cannot calculate unit vector for a zero vector.")
             return
+        #end
 
-        
         # Calculate unit vector
         unit_vector = [divide(x, magnitude) for x in vector]
 
@@ -283,6 +310,8 @@ class math_wizard(pickle_manager):
             file.write(f"Unit vector for '{vector_name}':\n")
             for value in unit_vector:
                 file.write(f"{value}\n")
+            #end
+        #end
 
         print(f"Unit vector saved to: {unit_vector_file}")
         return unit_vector

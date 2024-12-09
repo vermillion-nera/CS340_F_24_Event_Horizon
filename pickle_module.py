@@ -15,7 +15,7 @@ Authors:
     Brian Britton
 
 Date Created     :  11/20/2024
-Date Last Updated:  12/06/2024
+Date Last Updated:  12/08/2024
 
 Doc:
     <***>
@@ -309,6 +309,4 @@ if __name__ == "__main__":
     
     #TEST Code
     main()
-    manager = pickle_manager("pickle_dataframe.pkl")
-    manager.create_Pickle(dataframe)
-    manager.print_Pickle()
+    

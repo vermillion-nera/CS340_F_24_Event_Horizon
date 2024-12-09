@@ -272,8 +272,9 @@ class math_wizard(pickle_manager):
             print(f"Cannot calculate unit vector for a zero vector.")
             return
 
+        
         # Calculate unit vector
-        unit_vector = [x / magnitude for x in vector]
+        unit_vector = [divide(x, magnitude) for x in vector]
 
         # Output file for the unit vector
         unit_vector_file = os.path.join(self.output_folder, f"unit_vector_{vector_name}.txt")
@@ -290,6 +291,8 @@ class math_wizard(pickle_manager):
 
 
 #Function definitions Start Here
+divide = lambda a, b: a / b
+
 def main():
     pass
 #

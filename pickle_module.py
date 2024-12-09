@@ -194,9 +194,8 @@ class math_wizard(pickle_manager):
         print(f"Combinations saved to: {output_file}")
         return combinations
     #end
-#end
 
-#-----------------Vector Operations--------------
+    #-----------------Vector Operations--------------
    
    # Display the vector on the console.
     def display_vector(self, vector_name):
@@ -287,8 +286,7 @@ class math_wizard(pickle_manager):
         print(f"Unit vector saved to: {unit_vector_file}")
         return unit_vector
     #end
-
-
+#end
 
 
 #Function definitions Start Here

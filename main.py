@@ -408,8 +408,18 @@ def enactCommand(command):
                         else:
                             answer = input.askForInput("Enter three column names seperated by a ',' (e.g., x, y, z)")
                         #end
-                        if (answer == "exit"):  print("Skipping obtaining position vector.")
-                        else:                   wizard.obtain_position_vector(*answer)
+                        if (answer == "exit"):
+                            print("Skipping obtaining position vector.")
+                        else:
+                            newAnswer = ""
+                            for argument in answer.split(","):
+                                if (newAnswer != ""):
+                                    newAnswer += ","
+                                #end
+                                newAnswer += "'"+argument+"'"
+                            #end
+                            eval("wizard.obtain_position_vector("+newAnswer+")")
+                        #end
                     elif (commandArgs[2] == "unit"):
                         if (len(commandArgs) > 3):
                             answer = " ".join(commandArgs[3:])
